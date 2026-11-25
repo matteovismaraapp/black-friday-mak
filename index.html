@@ -96,6 +96,14 @@ h2 em{font-style:normal;color:var(--red)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
 .chips button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:700;color:var(--ink);min-height:40px;cursor:pointer}
 .chips button.on{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+.pacs{flex-direction:column}
+.pacs button{border-radius:10px;text-align:left;display:flex;flex-direction:column;gap:2px;padding:10px 12px;width:100%}
+.pacs button b{font-family:var(--titolo);font-weight:800;font-size:20px;text-transform:uppercase}
+.pacs button span{font-size:13px;font-weight:600;color:var(--mute)}
+.pacs button .pz{font-family:var(--titolo);font-size:22px;font-weight:800;color:var(--ink)}
+.pacs button .pz s{font-size:16px;color:var(--mute)}
+.pacs button .pz i{font-style:normal;font-family:var(--testo);font-size:12px;color:var(--mute)}
+.pacs button.on .pz{color:var(--red)}
 .lab{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mute);margin:12px 0 6px}
 .righe{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .rg{display:flex;align-items:center;gap:10px}
@@ -232,17 +240,19 @@ const SEZ = [
    steli:[["93000000MXG","Gomma"],["9300000MXB","Lega nero"],["93000000MX","Lega silver"]],
    fasce:[{n:12,p:16.15},{n:20,p:15.70},{n:50,p:14.82},{n:100,p:14.48},{n:300,p:13.01}], min:12}
  ]},
+ {id:"tool", nome:"Tool + TPMS", prod:[
+  {id:"thuf", tipo:"pacchetto", nome:"Tool HUF ECS + MA41", tpms:"TPMS HUF ECS", strum:"strumento MA41", img:"p-ma41", link:"black-friday-tool8-huf/", desc:"Extra −15%. Scegli il tool, poi dividi i sensori tra gli steli.",
+   pac:[{n:30,p:467.5,l:550},{n:16,p:340,l:400},{n:12,p:238,l:280}],
+   steli:[["930000ECSR","Gomma"],["930000ECSM","Lega silver"],["93000ECSBM","Lega nero"],["930000ECSA","Antracite"]]},
+  {id:"tautel", tipo:"pacchetto", nome:"Tool Autel + TS508", tpms:"TPMS universali programmabili", strum:"strumento Autel TS508", img:"p-ts508", link:"black-friday-tool-autel/", desc:"Extra −15%. Scegli il tool, poi dividi i sensori tra gli steli.",
+   pac:[{n:30,p:501.5,l:590},{n:16,p:357,l:420},{n:12,p:272,l:320}],
+   steli:[["93000000MXG","Gomma"],["93000000MX","Lega silver"],["9300000MXB","Lega nero"]]}
+ ]},
  {id:"strumenti", nome:"Strumenti TPMS", prod:[
   {id:"combo", tipo:"lista", nome:"Combo Autel ITS600 + TBE200", img:"p-combo", link:"black-friday-combo-autel/", desc:"Insieme a 450 € invece di 900 €, oppure singoli a 315 €.",
    art:[["7200000006 + 7200000004","Combo ITS600 + TBE200",450,900],["7200000006","Autel ITS600",315,450],["7200000004","Autel TBE200",315,450]]},
   {id:"ts900", tipo:"lista", nome:"Autel TS900", img:"p-ts900", link:"black-friday-ts900/", desc:"24 mesi di aggiornamento inclusi. Security Gateway FULL 12 mesi a 390 €.",
    art:[["7200000027","Autel TS900",414,690],["7200000046","Pacchetto Security Gateway FULL 12 mesi",390,null]]},
-  {id:"thuf", tipo:"pacchetto", nome:"Tool HUF: MATE MA41 + sensori ECS", img:"p-ma41", link:"black-friday-tool8-huf/", desc:"Strumento MA41 con cavo OBD + sensori HUF ECS. Dividi i sensori tra gli steli.",
-   pac:[{n:8,p:238,l:280},{n:16,p:340,l:400},{n:30,p:467.5,l:550}],
-   steli:[["930000ECSR","Gomma"],["930000ECSM","Lega silver"],["93000ECSBM","Lega nero"],["930000ECSA","Antracite"]]},
-  {id:"tautel", tipo:"pacchetto", nome:"Tool Autel: TS508 + sensori MX", img:"p-ts508", link:"black-friday-tool-autel/", desc:"Strumento TS508 con cavo OBD + sensori Autel MX. Dividi i sensori tra gli steli.",
-   pac:[{n:12,p:272,l:320},{n:16,p:357,l:420},{n:30,p:501.5,l:590}],
-   steli:[["93000000MXG","Gomma"],["93000000MX","Lega silver"],["9300000MXB","Lega nero"]]},
   {id:"retrofit", tipo:"lista", nome:"Retrofit Kit TPMS", img:"p-retrofit", link:"black-friday-retrofit/", desc:"Extra −20%.",
    art:[["930000P451","P451 · 4 ruote, pickup e camper",116,145],["93000HT602","HT602 · 6 ruote, camper e rimorchi",200,250]]}
  ]},
@@ -294,7 +304,7 @@ function htmlProd(p){
     h += `<p class="lab">${p.tipo === "steli" ? "Quanti per stelo" : "Quanti per taglia"}</p><div class="griglia">` + voci.map(v => `<div class="cl"><span>${esc(v[1])}</span>${stepper(p.id+"|"+v[0], p.nome+" "+v[1])}</div>`).join("") + `</div>`;
     h += `<p class="stato" data-stato="${p.id}"></p>`;
   } else if (p.tipo === "pacchetto"){
-    h += `<div class="chips" data-sel="${p.id}">` + p.pac.map((x,i) => `<button type="button" data-v="${i}">${x.n} sensori · ${euro(x.p)}</button>`).join("") + `</div>`;
+    h += `<div class="pacs chips" data-sel="${p.id}">` + p.pac.map((x,i) => `<button type="button" data-v="${i}"><b>Tool ${x.n}</b><span>${x.n} ${esc(p.tpms)} + 1 ${esc(p.strum)}</span><span class="pz"><s>${euro(x.l)}</s> ${euro(x.p)} <i>+ IVA</i></span></button>`).join("") + `</div>`;
     h += `<div class="righe"><div class="rg"><div class="nm">Quanti pacchetti<small data-pl="${p.id}"></small></div>${stepper(p.id+"|pac", p.nome+" pacchetti")}</div></div>`;
     h += `<p class="lab">Dividi i sensori per stelo</p><div class="griglia">` + p.steli.map(s => `<div class="cl"><span>${esc(s[1])}</span>${stepper(p.id+"|"+s[0], p.nome+" "+s[1])}</div>`).join("") + `</div>`;
     h += `<p class="stato" data-stato="${p.id}"></p>`;
@@ -403,7 +413,7 @@ function aggiorna(){
 const setQ = (k, v) => { v = Math.max(0, Math.floor(Number(v) || 0)); if (v) S.q[k] = v; else delete S.q[k]; aggiorna(); };
 document.addEventListener("click", e => {
   const b = e.target.closest(".st button"); if (b) { const k = b.parentNode.dataset.k; setQ(k, Q(k) + Number(b.dataset.d)); return; }
-  const c = e.target.closest("[data-sel] button"); if (c) { const id = c.parentNode.dataset.sel, v = Number(c.dataset.v); S.sel[id] = v; aggiorna(); return; }
+  const c = e.target.closest("[data-sel] button"); if (c) { const id = c.parentNode.dataset.sel, v = Number(c.dataset.v); S.sel[id] = v; if (PROD[id].tipo === "pacchetto" && !Q(id + "|pac")) S.q[id + "|pac"] = 1; aggiorna(); return; }
   const a = e.target.closest('a[href^="#p-"], a[href="#ordine"]');
   if (a) { const t = document.querySelector(a.getAttribute("href")); if (!t) return; e.preventDefault(); const d = t.closest("details"); if (d) d.open = true; requestAnimationFrame(() => t.scrollIntoView({behavior:"smooth", block:"start"})); }
 });
