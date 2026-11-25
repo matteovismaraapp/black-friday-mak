@@ -107,6 +107,7 @@ h2 em{font-style:normal;color:var(--red)}
 .lab{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mute);margin:12px 0 6px}
 .righe{display:flex;flex-direction:column;gap:8px;margin-top:10px}
 .rg{display:flex;align-items:center;gap:10px}
+.rg[hidden]{display:none}
 .rg .nm{flex:1;min-width:0;font-size:15px;font-weight:600;line-height:1.2}
 .rg .nm small{display:block;font-size:12px;font-weight:500;color:var(--mute)}
 .rg .nm s{color:var(--mute);font-weight:500;font-size:12px}
@@ -226,6 +227,8 @@ const euro = n => n.toFixed(2).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const tier = (f, n) => f.filter(x => n >= x.n).pop();
 
+const foro = r => r[1] === "Lega" ? ((r[0].match(/(26|32)[A-Z]?$/) || [])[1] || "") : "";
+const TRUCK=[["F1423CCKS00X1", "Acciaio", "AKO", "Silver", "14", "22,5", "0", "10", "335", "281,00", 80.64, 5],["F1223CCMB120X3", "Acciaio", "Maxion", "Nero lucido", "11,75", "22,5", "120", "10", "335", "281,00", 84.67, 46],["F1223WGBI12032", "Lega", "NGW", "Bright", "11,75", "22,5", "120", "10", "335", "281,00", 238.16, 2],["F1223WGBI12032G", "Lega", "NGW", "Bright", "11,75", "22,5", "120", "10", "335", "281,00", 251.39, 2],["F1223WGOP0032", "Lega", "NGW", "Lucido esterno", "11,75", "22,5", "0", "10", "335", "281,00", 194.05, 17],["F1223WGOP12032", "Lega", "NGW", "Lucido esterno", "11,75", "22,5", "120", "10", "335", "281,00", 194.05, 4],["F1223WGOP13526", "Lega", "NGW", "Lucido esterno", "11,75", "22,5", "135", "10", "335", "281,00", 216.1, 7],["F1223WGSM0032", "Lega", "NGW", "Spazzolato", "11,75", "22,5", "0", "10", "335", "281,00", 176.41, 18],["F1223WGSM12032", "Lega", "NGW", "Spazzolato", "11,75", "22,5", "120", "10", "335", "281,00", 176.41, 30],["F1423CCUS00X1", "Acciaio", "Sudrad", "Silver", "14", "22,5", "0", "10", "335", "281,00", 101.5, 23],["F7523WGPP16226", "Lega", "NGW", "Lucido int/est", "7,5", "22,5", "162", "10", "335", "281,00", 220.52, 24],["F8523WGBI16726", "Lega", "NGW", "Bright", "8,25", "22,5", "167", "10", "335", "281,00", 260.21, 20],["F8523WGBI16732", "Lega", "NGW", "Bright", "8,25", "22,5", "167", "10", "335", "281,00", 260.21, 4],["F8523WGPP16726", "Lega", "NGW", "Lucido int/est", "8,25", "22,5", "167", "10", "335", "281,00", 224.93, 18],["F8523WGPP16732", "Lega", "NGW", "Lucido int/est", "8,25", "22,5", "167", "10", "335", "281,00", 224.93, 23],["F8523WGSM16726", "Lega", "NGW", "Spazzolato", "8,25", "22,5", "167", "10", "335", "281,00", 207.28, 21],["F9023CCJS175XK3", "Acciaio", "JMS", "Silver", "9", "22,5", "175", "10", "335", "281,00", 70, 31],["F9023WGBI17526", "Lega", "NGW", "Bright", "9", "22,5", "175", "10", "335", "281,00", 233.75, 16],["F9023WGBI17526G", "Lega", "NGW", "Bright", "9", "22,5", "175", "10", "335", "281,00", 246.98, 4],["F9023WGBI17532", "Lega", "NGW", "Bright", "9", "22,5", "175", "10", "335", "281,00", 233.75, 33],["F9023WGPP17526", "Lega", "NGW", "Lucido int/est", "9", "22,5", "175", "10", "335", "281,00", 189.64, 10],["F9023WGSM17526", "Lega", "NGW", "Spazzolato", "9", "22,5", "175", "10", "335", "281,00", 172, 25],["F1123YPBI0026", "Lega", "Pomlead", "Pom-Nano bright", "11,75", "22,5", "0", "10", "335", "281,20", 306.4, 30],["F1123YPBI12032", "Lega", "Pomlead", "Pom-Nano bright", "11,75", "22,5", "120", "10", "335", "281,20", 306.4, 50],["F1123YPBI13526", "Lega", "Pomlead", "Pom-Nano bright", "11,75", "22,5", "135", "10", "335", "281,20", 306.4, 37],["F1123YPOP12032", "Lega", "Pomlead", "Lucido esterno", "11,75", "22,5", "120", "10", "335", "281,20", 236, 50],["F1123YPOP13526", "Lega", "Pomlead", "Lucido esterno", "11,75", "22,5", "135", "10", "335", "281,20", 236, 29],["F1123YPSM12032", "Lega", "Pomlead", "Spazzolato", "11,75", "22,5", "120", "10", "335", "281,20", 223.2, 50],["F8523YPBI16726", "Lega", "Pomlead", "Pom-Nano bright", "8,25", "22,5", "167", "10", "335", "281,20", 290.4, 50],["F8523YPBI16732", "Lega", "Pomlead", "Pom-Nano bright", "8,25", "22,5", "167", "10", "335", "281,20", 290.4, 48],["F8523YPPP16732", "Lega", "Pomlead", "Lucido int/est", "8,25", "22,5", "167", "10", "335", "281,20", 211.2, 49],["F9023YPSM17526", "Lega", "Pomlead", "Spazzolato", "9", "22,5", "175", "10", "335", "281,20", 197.6, 50],["F9023CCMS175XK4", "Acciaio", "Maxion", "Silver", "9", "22,5", "175", "10", "335", "281,00", 102, 50],["F7520CCMS150XK5", "Acciaio", "Maxion", "Silver", "7,5", "19,5", "150", "10", "225", "176,00", 56, 50],["F7520CCMS155X5", "Acciaio", "Maxion", "Silver", "7,5", "19,5", "155", "8", "275", "221,00", 57.5, 50],["F1420CCKS00X4", "Acciaio", "AKO", "Silver", "14", "19,5", "0", "10", "335", "281,00", 95.26, 35],["F1420CCMS00X3", "Acciaio", "Maxion", "Silver", "14", "19,5", "0", "8", "275", "221,00", 124.12, 19],["F7520CCJS150X6", "Acciaio", "JMS", "Silver", "7,5", "19,5", "150", "10", "225", "176,00", 67.03, 50],["F7520WGBI15532", "Lega", "NGW", "Bright", "7,5", "19,5", "155", "8", "275", "221,00", 194.05, 4],["F7520WGSM15526", "Lega", "NGW", "Spazzolato", "7,5", "19,5", "155", "8", "275", "221,00", 141.13, 1],["F8520CCUS160X1", "Acciaio", "Sudrad", "Silver", "8,25", "19,5", "160", "10", "225", "176,00", 84.67, 20],["F7520YPPP15530", "Lega", "Pomlead", "Lucido int/est", "7,5", "19,5", "155", "8", "275", "221,10", 204.8, 44],["F7080CCMS140XK4", "Acciaio", "Maxion", "Silver", "6,75", "17,5", "140", "10", "225", "176,00", 43.7, 50],["F6080CCJS124X4", "Acciaio", "JMS", "Silver", "6", "17,5", "124", "8", "275", "221,00", 59.98, 50],["F6080CCJS131X5", "Acciaio", "JMS", "Silver", "6", "17,5", "131", "6", "205", "161,00", 59.98, 50],["F7080CCJS142X5", "Acciaio", "JMS", "Silver", "6,75", "17,5", "142", "8", "275", "221,00", 59.98, 50],["F7080WGPP14126", "Lega", "NGW", "Lucido int/est", "6,75", "17,5", "141", "10", "225", "176,00", 149.95, 3],["F7080WGPP14132", "Lega", "NGW", "Lucido int/est", "6,75", "17,5", "141", "10", "225", "176,00", 149.95, 4],["F7080WGSM14126", "Lega", "NGW", "Spazzolato", "6,75", "17,5", "141", "10", "225", "176,00", 132.31, 3],["F7080CCJS140X6", "Acciaio", "JMS", "Silver", "6,75", "17,5", "140", "10", "225", "176,00", 72.83, 50],["F5560CCSI134JK1", "Acciaio", "Gianetti", "Silver", "5,5", "16", "134", "6", "205", "161,00", 56.84, 19],["F5560YPPP612616", "Lega", "Pomlead", "Lucido int/est", "5,5", "16", "126", "6", "205", "161,00", 158.4, 38]];
 /* ---------- catalogo (prezzi e codici delle singole locandine) ---------- */
 const SEZ = [
  {id:"sensori", nome:"Sensori TPMS", prod:[
@@ -281,7 +284,8 @@ const SEZ = [
  {id:"truck", nome:"Truck", prod:[
   {id:"truck", tipo:"lista", nome:"TPMS Truck", img:"p-truck", link:"black-friday-truck/", desc:"Sensori −30%, strumenti −15%.",
    art:[["930HUFTR02","Sensore HUF TRUCK",38.5,55],["930ATRUCKR","Sensore AUTEL TRUCK con cinghia",38.5,55],["9300000333","Strumento ATEQ VT TRUCK 2.0",416.5,490],["7200000054","Strumento AUTEL ITS600 CV",467.5,550]]},
-  {id:"autocarro", tipo:"richiesta", nome:"Ruote autocarro selezionate", pct:"−20%", desc:"Maxion, Lead, JMS e Pomlead a magazzino, su codici selezionati.", campo:"Che misure ti servono?"}
+  {id:"rtruck", tipo:"catalogo", nome:"Ruote autocarro Black Friday", img:"p-rtruck", desc:"Extra sconto fino al −50% su 52 codici a magazzino. Prezzi netti Black Friday, IVA esclusa."},
+  {id:"autocarro", tipo:"richiesta", nome:"Non trovi la misura?", voce:"Ruote autocarro, misura non in lista", pct:"", desc:"Scrivimi cosa ti serve e ti mando io la proposta.", campo:"Misura, ET, fori…"}
  ]}
 ];
 
@@ -293,7 +297,7 @@ const Q = k => S.q[k] || 0;
 
 /* ---------- disegno ---------- */
 const stepper = (k, lab, step) => `<div class="st" data-k="${k}"><button type="button" data-d="-${step||1}" aria-label="Meno ${esc(lab)}">−</button><input type="number" inputmode="numeric" min="0" step="${step||1}" placeholder="0" data-k="${k}" aria-label="${esc(lab)}"><button type="button" data-d="${step||1}" aria-label="Più ${esc(lab)}">+</button></div>`;
-const testa = p => `<div class="ph">${p.img ? `<img src="img/${p.img}.webp" alt="" loading="lazy">` : `<span class="pct">${p.pct}</span>`}<div class="tx"><h3>${esc(p.nome)}</h3><p>${esc(p.desc)}${p.link ? ` <a class="dt" href="${p.link}">Dettagli ›</a>` : ""}${p.b2b ? ` <a class="dt" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Portale B2B ›</a>` : ""}</p></div></div>`;
+const testa = p => `<div class="ph">${p.img ? `<img src="img/${p.img}.webp" alt="" loading="lazy">` : (p.pct ? `<span class="pct">${p.pct}</span>` : "")}<div class="tx"><h3>${esc(p.nome)}</h3><p>${esc(p.desc)}${p.link ? ` <a class="dt" href="${p.link}">Dettagli ›</a>` : ""}${p.b2b ? ` <a class="dt" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Portale B2B ›</a>` : ""}</p></div></div>`;
 
 function htmlProd(p){
   let h = `<div class="pr" id="p-${p.id}">` + testa(p);
@@ -311,13 +315,18 @@ function htmlProd(p){
   } else if (p.tipo === "lista"){
     h += `<div class="righe">` + p.art.map(a => `<div class="rg"><div class="nm">${esc(a[1])}<small><em>${euro(a[2])}</em>${a[3] ? " <s>"+euro(a[3])+"</s>" : ""} + IVA${a[4] ? " · a multipli di "+a[4] : ""}</small></div>${stepper(p.id+"|"+a[0], a[1], a[4])}</div>`).join("") + `</div>`;
     h += `<p class="stato" data-stato="${p.id}"></p>`;
+  } else if (p.tipo === "catalogo"){
+    h += `<p class="lab">Diametro</p><div class="chips" data-sel="${p.id}-d">` + ["16","17,5","19,5","22,5"].map((d,i) => `<button type="button" data-v="${i}">${d}"</button>`).join("") + `</div>`;
+    h += `<p class="lab">Tipo</p><div class="chips" data-sel="${p.id}-t">` + ["Tutte","Acciaio","Lega"].map((d,i) => `<button type="button" data-v="${i}">${d}</button>`).join("") + `</div>`;
+    h += `<p class="stato" data-vuoto="${p.id}">Scegli il diametro per vedere le ruote in offerta.</p><div class="righe">` + TRUCK.slice().sort((a,b) => a[10]-b[10]).map(r => `<div class="rg" data-tr="${r[5]}|${r[1]}" hidden><div class="nm">${r[4]}×${r[5]} · ET${r[6]}<small>${esc(r[2])} ${r[1].toLowerCase()} · ${esc(r[3])} · ${r[7]} fori ${r[8]}${foro(r) ? " · foro Ø" + foro(r) : ""}</small><small>${r[0]} · <b>${r[11]} pz</b> a stock</small><small><em>${euro(r[10])}</em> + IVA</small></div>${stepper(p.id+"|"+r[0], r[0])}</div>`).join("") + `</div>`;
+    h += `<p class="stato" data-stato="${p.id}"></p>`;
   } else if (p.tipo === "richiesta"){
     h += `<input class="campo" type="text" data-t="${p.id}" placeholder="${esc(p.campo)}" aria-label="${esc(p.nome)}: ${esc(p.campo)}">`;
-    h += `<p class="stato">Scrivilo qui e lo trovo nel tuo ordine: ti rispondo con prezzi e disponibilità.</p>`;
+    h += `<p class="stato">Lo trovo nel tuo ordine: ti rispondo con prezzi e disponibilità.</p>`;
   }
   return h + `</div>`;
 }
-document.getElementById("sezioni").innerHTML = SEZ.map(z => `<details class="sez" id="${z.id}"><summary><span class="tt">${z.nome}</span><span class="sx"><i class="badge" data-ok="${z.id}"></i><i class="cn">${z.prod.length} ${z.prod.length === 1 ? "offerta" : "offerte"}</i><span class="cv" aria-hidden="true">⌄</span></span></summary><div class="cbody">${z.prod.map(htmlProd).join("")}</div></details>`).join("");
+document.getElementById("sezioni").innerHTML = SEZ.map(z => `<details class="sez" id="${z.id}"><summary><span class="tt">${z.nome}</span><span class="sx"><i class="badge" data-ok="${z.id}"></i><i class="cn">${z.id === "truck" ? "TPMS + 52 ruote" : z.prod.length + " " + (z.prod.length === 1 ? "offerta" : "offerte")}</i><span class="cv" aria-hidden="true">⌄</span></span></summary><div class="cbody">${z.prod.map(htmlProd).join("")}</div></details>`).join("");
 
 /* ---------- calcolo ---------- */
 const PROD = {}; SEZ.forEach(z => z.prod.forEach(p => { p.sez = z.id; PROD[p.id] = p; }));
@@ -361,6 +370,12 @@ function calcola(p){
       r.righe.push({nome: a[1] + " (" + a[0] + ")", det: n + " × " + euro(a[2]), sub: [], tot: n * a[2]}); });
     if (r.err) { r.stato = r.err; r.cls = "bad"; }
     else if (r.righe.length) { r.stato = "✓ " + euro(r.righe.reduce((s, x) => s + x.tot, 0)); r.cls = "ok"; }
+  } else if (p.tipo === "catalogo"){
+    TRUCK.forEach(x => { const n = Q(p.id+"|"+x[0]); if (!n) return; r.pz += n;
+      if (n > x[11] && !r.err) r.err = "Ruota " + x[0] + ": a stock ce ne sono " + x[11] + ".";
+      r.righe.push({nome: "Ruota autocarro " + x[2] + " " + x[4] + "×" + x[5] + " ET" + x[6] + (foro(x) ? " foro " + foro(x) : "") + " " + x[3] + " (" + x[0] + ")", det: n + " × " + euro(x[10]), sub: [], tot: n * x[10]}); });
+    if (r.err) { r.stato = r.err; r.cls = "bad"; }
+    else if (r.righe.length) { r.stato = "✓ " + r.pz + " ruote = " + euro(r.righe.reduce((s, x) => s + x.tot, 0)); r.cls = "ok"; }
   } else if (p.tipo === "richiesta"){
     const t = (S.txt[p.id] || "").trim(); if (t) { r.pz = 1; r.rich = t; }
   }
@@ -373,7 +388,7 @@ function messaggio(R){
   R.forEach(x => x.r.righe.forEach(l => { tot += l.tot; m += "\n• " + l.nome + ": " + l.det + " = " + euro(l.tot); l.sub.forEach(s => m += "\n   – " + s); }));
   if (tot) m += "\n\nTotale netto: " + euro(tot) + " + IVA";
   const ric = R.filter(x => x.r.rich);
-  if (ric.length) m += "\n\nVorrei un'offerta per:" + ric.map(x => "\n• " + x.p.nome + ": " + x.r.rich).join("");
+  if (ric.length) m += "\n\nVorrei un'offerta per:" + ric.map(x => "\n• " + (x.p.voce || x.p.nome) + ": " + x.r.rich).join("");
   if (S.off.trim()) m += "\n\nRivenditore: " + S.off.trim();
   return m + "\n\nGrazie!";
 }
@@ -392,12 +407,15 @@ function aggiorna(){
     const pl = document.querySelector(`[data-pl="${p.id}"]`); if (pl) { const i = S.sel[p.id]; pl.textContent = i != null ? "da " + p.pac[i].n + " sensori · " + euro(p.pac[i].p) + " l'uno" : "scegli prima il pacchetto"; }
   });
   document.querySelectorAll(".st input").forEach(i => { const v = Q(i.dataset.k); if (document.activeElement !== i) i.value = v || ""; i.parentNode.classList.toggle("on", v > 0); });
-  document.querySelectorAll("[data-sel]").forEach(c => { const id = c.dataset.sel, v = S.sel[id] != null ? S.sel[id] : (PROD[id].expo ? 0 : -1); c.querySelectorAll("button").forEach(b => b.classList.toggle("on", Number(b.dataset.v) === v)); });
+  { const di = S.sel["rtruck-d"], ti = S.sel["rtruck-t"] || 0, D = ["16","17,5","19,5","22,5"][di], T = ["","Acciaio","Lega"][ti];
+    document.querySelectorAll("[data-tr]").forEach(e => { const [d, t] = e.dataset.tr.split("|"); e.hidden = !(D && d === D && (!T || t === T)) && !Q("rtruck|" + e.querySelector("input").dataset.k.split("|")[1]); });
+    const v = document.querySelector('[data-vuoto="rtruck"]'); if (v) v.hidden = !!D; }
+  document.querySelectorAll("[data-sel]").forEach(c => { const id = c.dataset.sel, v = S.sel[id] != null ? S.sel[id] : (id === "rtruck-t" ? 0 : (PROD[id] && PROD[id].expo ? 0 : -1)); c.querySelectorAll("button").forEach(b => b.classList.toggle("on", Number(b.dataset.v) === v)); });
   SEZ.forEach(z => { const n = R.filter(x => x.p.sez === z.id && (x.r.righe.length || x.r.rich)).length; document.querySelector(`[data-ok="${z.id}"]`).textContent = n ? n + " nell'ordine" : ""; });
   /* riepilogo */
   let h = "";
   R.forEach(({r}) => r.righe.forEach(l => h += `<div class="line"><div><b>${esc(l.nome)}</b><small>${esc(l.det)}${l.sub.length ? " · " + esc(l.sub.join(", ")) : ""}</small></div><span class="t">${euro(l.tot)}</span></div>`));
-  R.filter(x => x.r.rich).forEach(({p, r}) => h += `<div class="line"><div><b>${esc(p.nome)}</b><small>${esc(r.rich)}</small></div><span class="t">da quotare</span></div>`);
+  R.filter(x => x.r.rich).forEach(({p, r}) => h += `<div class="line"><div><b>${esc(p.voce || p.nome)}</b><small>${esc(r.rich)}</small></div><span class="t">da quotare</span></div>`);
   document.getElementById("righe").innerHTML = h || `<p class="vuoto">Ancora niente: apri una tendina e metti le quantità con + e −.</p>`;
   document.getElementById("totale").textContent = euro(tot);
   const ok = voci > 0 && !err, a = document.getElementById("invia");
@@ -413,7 +431,7 @@ function aggiorna(){
 const setQ = (k, v) => { v = Math.max(0, Math.floor(Number(v) || 0)); if (v) S.q[k] = v; else delete S.q[k]; aggiorna(); };
 document.addEventListener("click", e => {
   const b = e.target.closest(".st button"); if (b) { const k = b.parentNode.dataset.k; setQ(k, Q(k) + Number(b.dataset.d)); return; }
-  const c = e.target.closest("[data-sel] button"); if (c) { const id = c.parentNode.dataset.sel, v = Number(c.dataset.v); S.sel[id] = v; if (PROD[id].tipo === "pacchetto" && !Q(id + "|pac")) S.q[id + "|pac"] = 1; aggiorna(); return; }
+  const c = e.target.closest("[data-sel] button"); if (c) { const id = c.parentNode.dataset.sel, v = Number(c.dataset.v); S.sel[id] = v; if (PROD[id] && PROD[id].tipo === "pacchetto" && !Q(id + "|pac")) S.q[id + "|pac"] = 1; aggiorna(); return; }
   const a = e.target.closest('a[href^="#p-"], a[href="#ordine"]');
   if (a) { const t = document.querySelector(a.getAttribute("href")); if (!t) return; e.preventDefault(); const d = t.closest("details"); if (d) d.open = true; requestAnimationFrame(() => t.scrollIntoView({behavior:"smooth", block:"start"})); }
 });

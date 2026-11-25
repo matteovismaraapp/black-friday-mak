@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Friday MAK · Ruote autocarro</title>
+<meta name="description" content="Black Friday B2B dal 25 novembre al 6 dicembre 2026: tutte le promo MAK, NoProblemKit, MATE e Truck in una pagina, con un solo ordine su WhatsApp. Prezzi netti IVA esclusa.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ruote autocarro Black Friday MAK: extra sconto fino al −50%">
+<meta property="og:description" content="Dal 25 novembre al 6 dicembre: 52 ruote autocarro in acciaio e lega a magazzino, prezzi netti Black Friday. Scegli la misura e ordina su WhatsApp.">
+<meta property="og:image" content="https://matteovismaraapp.github.io/black-friday-mak/ruote-autocarro/anteprima.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://matteovismaraapp.github.io/black-friday-mak/ruote-autocarro/">
+<meta name="theme-color" content="#14161a">
+<link rel="apple-touch-icon" href="../icona.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#da2128; --red-soft:#fdecec; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366; --verde-scuro:#13813f; --oro:#f5c400; --giallo:#ffe27a;
+  --titolo:"DIN Condensed","Avenir Next Condensed","Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--testo);font-size:16px;line-height:1.4}
+html{scroll-padding-top:70px}
+body{padding-top:calc(60px + env(safe-area-inset-top));padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+a{color:inherit}
+button{font-family:inherit}
+.wrap{max-width:540px;margin:0 auto;overflow:hidden}
+
+/* conto alla rovescia */
+.timer{position:fixed;top:0;left:0;right:0;z-index:25;background:var(--ink);color:#fff;text-align:center;
+  padding:calc(8px + env(safe-area-inset-top)) 12px 8px;box-shadow:0 4px 16px rgba(0,0,0,.3);text-decoration:none;display:block}
+.timer small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--oro);font-weight:700}
+.cifre{display:flex;justify-content:center;gap:10px;font-family:var(--titolo);font-weight:800;font-size:26px;line-height:1;margin-top:3px}
+.cifre span b{display:inline-block;min-width:1.25em}
+.cifre span i{font-style:normal;font-size:13px;opacity:.8;margin-left:1px}
+
+/* testata */
+.hero{background:var(--ink);color:#fff;padding:16px 16px 18px;border-bottom:4px solid var(--red)}
+.hero .pre{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9ccd2;margin:0}
+.hero h1{margin:2px 0 10px;font-family:var(--titolo);font-weight:800;font-style:italic;font-size:50px;line-height:.95;text-transform:uppercase;letter-spacing:.3px}
+.hero h1 em{font-style:inherit;color:var(--red)}
+.hero .date{display:inline-block;background:var(--oro);color:var(--ink);font-family:var(--titolo);font-weight:800;font-size:20px;padding:4px 12px 2px;transform:skewX(-10deg);text-transform:uppercase}
+.loghi{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.loghi img{height:17px;width:auto;max-width:23%;object-fit:contain;display:block}
+.loghi img.trk{height:21px}
+
+section{padding:22px 16px 4px}
+h2{font-family:var(--titolo);font-weight:800;font-size:28px;text-transform:uppercase;margin:0 0 4px;line-height:1}
+h2 em{font-style:normal;color:var(--red)}
+
+/* hot deals */
+.hot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.deal{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;text-decoration:none;color:var(--ink);border:2px solid var(--red);border-radius:10px;padding:8px 6px;background:#fff;box-shadow:0 3px 0 var(--red)}
+.deal:active{transform:translateY(2px);box-shadow:0 1px 0 var(--red);background:var(--red-soft)}
+.deal img{width:56px;height:56px;object-fit:contain;display:block}
+.deal b{font-family:var(--titolo);font-weight:800;font-size:15px;line-height:1.05;text-transform:uppercase;min-height:2.1em;display:flex;flex-direction:column;justify-content:center}
+.deal .p{font-family:var(--titolo);font-weight:800;font-size:26px;line-height:1;color:var(--red)}
+.deal .n{font-size:11px;font-weight:600;color:var(--mute);line-height:1.2}
+
+/* tendine */
+.pick{margin:0;background:var(--giallo);border:2px solid var(--ink);border-radius:10px;padding:10px 14px;font-weight:700;font-size:17px;text-align:center}
+.pick::after{content:" ↓"}
+.sezioni{padding:12px 16px 0;display:flex;flex-direction:column;gap:12px}
+.sez{scroll-margin-top:70px}
+.sez summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:10px;padding:14px 16px;min-height:56px}
+.sez summary::-webkit-details-marker{display:none}
+.sez summary:active{background:#33373d}
+.sez .tt{font-family:var(--titolo);font-weight:800;font-size:25px;text-transform:uppercase;line-height:1}
+.sez .sx{margin-left:auto;display:flex;align-items:center;gap:8px}
+.sez .cn{font-style:normal;color:#ffd5d6;font-weight:600;font-size:13px;white-space:nowrap}
+.sez .badge{font-style:normal;background:var(--verde);color:#fff;border-radius:999px;padding:1px 9px;font-weight:700;font-size:13px;white-space:nowrap}
+.sez .badge:empty{display:none}
+.sez .cv{font:800 24px/1 var(--testo);transition:transform .15s}
+.sez[open] .cv{transform:rotate(180deg)}
+.sez[open] summary{border-radius:10px 10px 0 0}
+.cbody{border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:0 12px 10px}
+
+/* prodotto */
+.pr{padding:14px 0 12px;border-bottom:1px solid var(--line);scroll-margin-top:72px}
+.pr:last-child{border-bottom:0}
+.ph{display:flex;gap:12px;align-items:center}
+.ph img{width:60px;height:60px;object-fit:contain;flex:none}
+.ph .tx{flex:1;min-width:0}
+.ph h3{margin:0;font-family:var(--titolo);font-weight:800;font-size:21px;line-height:1.05;text-transform:uppercase}
+.ph p{margin:3px 0 0;font-size:13px;color:var(--mute);line-height:1.3}
+.ph .dt{font-size:13px;font-weight:700;color:var(--red);text-decoration:none;white-space:nowrap;margin-left:4px}
+.fasce{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.fasce span{border:2px solid var(--line);border-radius:8px;padding:3px 7px;font-size:12px;font-weight:600;color:var(--mute);line-height:1.2;text-align:center}
+.fasce span b{display:block;font-family:var(--titolo);font-size:18px;color:var(--ink)}
+.fasce span.on{border-color:var(--red);background:var(--red-soft)}
+.fasce span.on b{color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.chips button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:14px;font-weight:700;color:var(--ink);min-height:40px;cursor:pointer}
+.chips button.on{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+.pacs{flex-direction:column}
+.pacs button{border-radius:10px;text-align:left;display:flex;flex-direction:column;gap:2px;padding:10px 12px;width:100%}
+.pacs button b{font-family:var(--titolo);font-weight:800;font-size:20px;text-transform:uppercase}
+.pacs button span{font-size:13px;font-weight:600;color:var(--mute)}
+.pacs button .pz{font-family:var(--titolo);font-size:22px;font-weight:800;color:var(--ink)}
+.pacs button .pz s{font-size:16px;color:var(--mute)}
+.pacs button .pz i{font-style:normal;font-family:var(--testo);font-size:12px;color:var(--mute)}
+.pacs button.on .pz{color:var(--red)}
+.lab{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mute);margin:12px 0 6px}
+.righe{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.rg{display:flex;align-items:center;gap:10px}
+.rg[hidden]{display:none}
+.rg .nm{flex:1;min-width:0;font-size:15px;font-weight:600;line-height:1.2}
+.rg .nm small{display:block;font-size:12px;font-weight:500;color:var(--mute)}
+.rg .nm s{color:var(--mute);font-weight:500;font-size:12px}
+.rg .nm em{font-style:normal;color:var(--red);font-weight:800}
+.griglia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:4px}
+.griglia .cl span{display:block;font-size:12px;font-weight:700;color:var(--mute);margin-bottom:3px;text-align:center}
+.st{display:flex;height:44px;border:2px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;flex:none}
+.rg .st{width:132px}
+.st button{flex:0 0 38px;border:0;background:var(--card);color:var(--ink);font:700 22px/1 var(--testo);cursor:pointer;padding:0}
+.st button:active{background:var(--giallo)}
+.st input{flex:1;min-width:0;width:0;border:0;text-align:center;font:700 17px var(--testo);background:#fff;color:var(--ink);padding:0;-moz-appearance:textfield}
+.st input::-webkit-outer-spin-button,.st input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.st.on{border-color:var(--red)}
+.st.on input{background:var(--giallo)}
+.stato{margin:10px 0 0;font-size:14px;font-weight:600;color:var(--mute)}
+.stato.ok{color:var(--verde-scuro)}
+.stato.bad{color:var(--red)}
+.campo{width:100%;border:2px solid var(--line);border-radius:10px;padding:11px 12px;font:500 16px var(--testo);margin-top:8px}
+.campo:focus,.st input:focus{outline:2px solid #1a6cff;outline-offset:1px}
+.pct{font-family:var(--titolo);font-weight:800;font-size:30px;color:var(--red);line-height:1;flex:none}
+
+/* ordine */
+.ordine{margin:22px 16px 0;border:2px solid var(--ink);border-radius:12px;padding:16px;scroll-margin-top:70px}
+.ordine h2{margin-bottom:8px}
+.line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+.line b{font-weight:700}
+.line small{display:block;color:var(--mute);font-size:12px}
+.line .t{font-weight:700;white-space:nowrap}
+.vuoto{color:var(--mute);margin:4px 0 8px;font-size:14px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin:12px 0 4px}
+.tot strong{font-family:var(--titolo);font-size:36px;font-weight:800;color:var(--red)}
+.tot span{font-size:13px;color:var(--mute)}
+.inviare{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--verde);color:#fff;text-decoration:none;border-radius:12px;min-height:54px;font:700 17px var(--testo);width:100%;margin-top:12px}
+.inviare[aria-disabled="true"]{background:#c9ced6;pointer-events:none}
+.msg{min-height:1.2em;margin:8px 0 0;font-size:14px;color:var(--red);font-weight:600}
+.azzera{margin-top:10px;width:100%;border:2px solid var(--line);background:#fff;border-radius:10px;padding:10px;font:600 15px var(--testo);color:var(--ink);cursor:pointer}
+
+.contatti{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 16px 0}
+.contatti a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border:2px solid var(--ink);border-radius:10px;text-decoration:none;font-weight:700;font-size:15px}
+.note{margin:14px 16px 0;padding:14px;background:var(--card);border-radius:12px;font-size:13px;color:var(--mute);line-height:1.45}
+.note b{color:var(--ink)}
+
+/* barra in basso */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.dock .in{max-width:512px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.dock .info{flex:1;min-width:0}
+.dock .info small{display:block;color:var(--mute);font-size:13px;line-height:1.1}
+.dock .info strong{font-family:var(--titolo);font-size:28px;font-weight:800;line-height:1}
+.dock a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:12px;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:0 16px;white-space:nowrap}
+.dock .solo{flex:1}
+</style>
+</head>
+<body>
+
+<a class="timer" href="#sezioni">
+  <small id="timerTesto">Black Friday: finisce il 6 dicembre</small>
+  <div class="cifre"><span><b id="gg">0</b><i>g</i></span><span><b id="hh">00</b><i>h</i></span><span><b id="mm">00</b><i>m</i></span><span><b id="ss">00</b><i>s</i></span></div>
+</a>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="pre">Promo B2B · ruote autocarro</p>
+  <h1>Black <em>Friday</em></h1>
+  <div class="date">Dal 25 novembre al 6 dicembre</div>
+</header>
+<div class="loghi">
+  <img class="trk" src="../loghi/logo-trk.png" alt="Truck">
+</div>
+
+<section style="padding-bottom:0">
+  <p class="pick">Scegli la misura e componi il tuo ordine</p>
+</section>
+
+<div class="sezioni" id="sezioni"></div>
+
+<div class="ordine" id="ordine">
+  <h2>Il tuo <em>ordine</em></h2>
+  <div id="righe"></div>
+  <div class="tot"><span>Totale netto, IVA esclusa</span><strong id="totale">0,00 €</strong></div>
+  <input class="campo" id="officina" type="text" placeholder="Nome rivenditore (facoltativo)" autocomplete="organization" aria-label="Nome rivenditore">
+  <a class="inviare" id="invia" href="#" target="_blank" rel="noopener" aria-disabled="true">Invia l'ordine su WhatsApp</a>
+  <p class="msg" id="msg" role="status"></p>
+  <button class="azzera" id="azzera" type="button">Azzera l'ordine</button>
+</div>
+
+<div class="contatti">
+  <a href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Portale B2B</a>
+  <a href="tel:+393893146609">Chiamami</a>
+</div>
+
+<div class="note">
+  <b>Come funziona.</b> Tutte le promo valgono dal 25 novembre al 6 dicembre 2026. Prezzi netti IVA esclusa. Solo articoli a magazzino, fino a esaurimento scorte. Tutte le altre promo Black Friday le trovi <a href="../">qui</a>.
+</div>
+
+</div>
+
+<div class="dock"><div class="in" id="dock"></div></div>
+
+<script>
+(function(){
+const TEL = "393893146609";
+const INIZIO = new Date("2026-11-25T00:00:00+01:00"), FINE = new Date("2026-12-06T23:59:59+01:00");
+const euro = n => n.toFixed(2).replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tier = (f, n) => f.filter(x => n >= x.n).pop();
+
+const foro = r => r[1] === "Lega" ? ((r[0].match(/(26|32)[A-Z]?$/) || [])[1] || "") : "";
+const TRUCK=[["F1423CCKS00X1", "Acciaio", "AKO", "Silver", "14", "22,5", "0", "10", "335", "281,00", 80.64, 5],["F1223CCMB120X3", "Acciaio", "Maxion", "Nero lucido", "11,75", "22,5", "120", "10", "335", "281,00", 84.67, 46],["F1223WGBI12032", "Lega", "NGW", "Bright", "11,75", "22,5", "120", "10", "335", "281,00", 238.16, 2],["F1223WGBI12032G", "Lega", "NGW", "Bright", "11,75", "22,5", "120", "10", "335", "281,00", 251.39, 2],["F1223WGOP0032", "Lega", "NGW", "Lucido esterno", "11,75", "22,5", "0", "10", "335", "281,00", 194.05, 17],["F1223WGOP12032", "Lega", "NGW", "Lucido esterno", "11,75", "22,5", "120", "10", "335", "281,00", 194.05, 4],["F1223WGOP13526", "Lega", "NGW", "Lucido esterno", "11,75", "22,5", "135", "10", "335", "281,00", 216.1, 7],["F1223WGSM0032", "Lega", "NGW", "Spazzolato", "11,75", "22,5", "0", "10", "335", "281,00", 176.41, 18],["F1223WGSM12032", "Lega", "NGW", "Spazzolato", "11,75", "22,5", "120", "10", "335", "281,00", 176.41, 30],["F1423CCUS00X1", "Acciaio", "Sudrad", "Silver", "14", "22,5", "0", "10", "335", "281,00", 101.5, 23],["F7523WGPP16226", "Lega", "NGW", "Lucido int/est", "7,5", "22,5", "162", "10", "335", "281,00", 220.52, 24],["F8523WGBI16726", "Lega", "NGW", "Bright", "8,25", "22,5", "167", "10", "335", "281,00", 260.21, 20],["F8523WGBI16732", "Lega", "NGW", "Bright", "8,25", "22,5", "167", "10", "335", "281,00", 260.21, 4],["F8523WGPP16726", "Lega", "NGW", "Lucido int/est", "8,25", "22,5", "167", "10", "335", "281,00", 224.93, 18],["F8523WGPP16732", "Lega", "NGW", "Lucido int/est", "8,25", "22,5", "167", "10", "335", "281,00", 224.93, 23],["F8523WGSM16726", "Lega", "NGW", "Spazzolato", "8,25", "22,5", "167", "10", "335", "281,00", 207.28, 21],["F9023CCJS175XK3", "Acciaio", "JMS", "Silver", "9", "22,5", "175", "10", "335", "281,00", 70, 31],["F9023WGBI17526", "Lega", "NGW", "Bright", "9", "22,5", "175", "10", "335", "281,00", 233.75, 16],["F9023WGBI17526G", "Lega", "NGW", "Bright", "9", "22,5", "175", "10", "335", "281,00", 246.98, 4],["F9023WGBI17532", "Lega", "NGW", "Bright", "9", "22,5", "175", "10", "335", "281,00", 233.75, 33],["F9023WGPP17526", "Lega", "NGW", "Lucido int/est", "9", "22,5", "175", "10", "335", "281,00", 189.64, 10],["F9023WGSM17526", "Lega", "NGW", "Spazzolato", "9", "22,5", "175", "10", "335", "281,00", 172, 25],["F1123YPBI0026", "Lega", "Pomlead", "Pom-Nano bright", "11,75", "22,5", "0", "10", "335", "281,20", 306.4, 30],["F1123YPBI12032", "Lega", "Pomlead", "Pom-Nano bright", "11,75", "22,5", "120", "10", "335", "281,20", 306.4, 50],["F1123YPBI13526", "Lega", "Pomlead", "Pom-Nano bright", "11,75", "22,5", "135", "10", "335", "281,20", 306.4, 37],["F1123YPOP12032", "Lega", "Pomlead", "Lucido esterno", "11,75", "22,5", "120", "10", "335", "281,20", 236, 50],["F1123YPOP13526", "Lega", "Pomlead", "Lucido esterno", "11,75", "22,5", "135", "10", "335", "281,20", 236, 29],["F1123YPSM12032", "Lega", "Pomlead", "Spazzolato", "11,75", "22,5", "120", "10", "335", "281,20", 223.2, 50],["F8523YPBI16726", "Lega", "Pomlead", "Pom-Nano bright", "8,25", "22,5", "167", "10", "335", "281,20", 290.4, 50],["F8523YPBI16732", "Lega", "Pomlead", "Pom-Nano bright", "8,25", "22,5", "167", "10", "335", "281,20", 290.4, 48],["F8523YPPP16732", "Lega", "Pomlead", "Lucido int/est", "8,25", "22,5", "167", "10", "335", "281,20", 211.2, 49],["F9023YPSM17526", "Lega", "Pomlead", "Spazzolato", "9", "22,5", "175", "10", "335", "281,20", 197.6, 50],["F9023CCMS175XK4", "Acciaio", "Maxion", "Silver", "9", "22,5", "175", "10", "335", "281,00", 102, 50],["F7520CCMS150XK5", "Acciaio", "Maxion", "Silver", "7,5", "19,5", "150", "10", "225", "176,00", 56, 50],["F7520CCMS155X5", "Acciaio", "Maxion", "Silver", "7,5", "19,5", "155", "8", "275", "221,00", 57.5, 50],["F1420CCKS00X4", "Acciaio", "AKO", "Silver", "14", "19,5", "0", "10", "335", "281,00", 95.26, 35],["F1420CCMS00X3", "Acciaio", "Maxion", "Silver", "14", "19,5", "0", "8", "275", "221,00", 124.12, 19],["F7520CCJS150X6", "Acciaio", "JMS", "Silver", "7,5", "19,5", "150", "10", "225", "176,00", 67.03, 50],["F7520WGBI15532", "Lega", "NGW", "Bright", "7,5", "19,5", "155", "8", "275", "221,00", 194.05, 4],["F7520WGSM15526", "Lega", "NGW", "Spazzolato", "7,5", "19,5", "155", "8", "275", "221,00", 141.13, 1],["F8520CCUS160X1", "Acciaio", "Sudrad", "Silver", "8,25", "19,5", "160", "10", "225", "176,00", 84.67, 20],["F7520YPPP15530", "Lega", "Pomlead", "Lucido int/est", "7,5", "19,5", "155", "8", "275", "221,10", 204.8, 44],["F7080CCMS140XK4", "Acciaio", "Maxion", "Silver", "6,75", "17,5", "140", "10", "225", "176,00", 43.7, 50],["F6080CCJS124X4", "Acciaio", "JMS", "Silver", "6", "17,5", "124", "8", "275", "221,00", 59.98, 50],["F6080CCJS131X5", "Acciaio", "JMS", "Silver", "6", "17,5", "131", "6", "205", "161,00", 59.98, 50],["F7080CCJS142X5", "Acciaio", "JMS", "Silver", "6,75", "17,5", "142", "8", "275", "221,00", 59.98, 50],["F7080WGPP14126", "Lega", "NGW", "Lucido int/est", "6,75", "17,5", "141", "10", "225", "176,00", 149.95, 3],["F7080WGPP14132", "Lega", "NGW", "Lucido int/est", "6,75", "17,5", "141", "10", "225", "176,00", 149.95, 4],["F7080WGSM14126", "Lega", "NGW", "Spazzolato", "6,75", "17,5", "141", "10", "225", "176,00", 132.31, 3],["F7080CCJS140X6", "Acciaio", "JMS", "Silver", "6,75", "17,5", "140", "10", "225", "176,00", 72.83, 50],["F5560CCSI134JK1", "Acciaio", "Gianetti", "Silver", "5,5", "16", "134", "6", "205", "161,00", 56.84, 19],["F5560YPPP612616", "Lega", "Pomlead", "Lucido int/est", "5,5", "16", "126", "6", "205", "161,00", 158.4, 38]];
+/* ---------- catalogo (prezzi e codici delle singole locandine) ---------- */
+const SEZ = [
+ {id:"truck", nome:"Ruote autocarro", prod:[
+  {id:"rtruck", tipo:"catalogo", nome:"Ruote autocarro Black Friday", img:"p-rtruck", desc:"Extra sconto fino al −50% su 52 codici a magazzino. Prezzi netti Black Friday, IVA esclusa."},
+  {id:"autocarro", tipo:"richiesta", nome:"Non trovi la misura?", voce:"Ruote autocarro, misura non in lista", pct:"", desc:"Scrivimi cosa ti serve e ti mando io la proposta.", campo:"Misura, ET, fori…"}
+ ]}
+];
+
+/* ---------- stato (resta salvato anche se apri una locandina e torni) ---------- */
+let S = {q:{}, sel:{}, txt:{}, off:""};
+try { const x = JSON.parse(localStorage.getItem("bfmak-truck-v1")); if (x && x.q) S = Object.assign(S, x); } catch(e) {}
+const salva = () => { try { localStorage.setItem("bfmak-truck-v1", JSON.stringify(S)); } catch(e) {} };
+const Q = k => S.q[k] || 0;
+
+/* ---------- disegno ---------- */
+const stepper = (k, lab, step) => `<div class="st" data-k="${k}"><button type="button" data-d="-${step||1}" aria-label="Meno ${esc(lab)}">−</button><input type="number" inputmode="numeric" min="0" step="${step||1}" placeholder="0" data-k="${k}" aria-label="${esc(lab)}"><button type="button" data-d="${step||1}" aria-label="Più ${esc(lab)}">+</button></div>`;
+const testa = p => `<div class="ph">${p.img ? `<img src="../img/${p.img}.webp" alt="" loading="lazy">` : (p.pct ? `<span class="pct">${p.pct}</span>` : "")}<div class="tx"><h3>${esc(p.nome)}</h3><p>${esc(p.desc)}${p.link ? ` <a class="dt" href="${p.link}">Dettagli ›</a>` : ""}${p.b2b ? ` <a class="dt" href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Portale B2B ›</a>` : ""}</p></div></div>`;
+
+function htmlProd(p){
+  let h = `<div class="pr" id="p-${p.id}">` + testa(p);
+  if (p.tipo === "steli" || p.tipo === "taglie"){
+    h += `<div class="fasce">` + p.fasce.map(f => `<span data-f="${p.id}-${f.n}">da ${f.n} pz<b>${euro(f.p)}</b></span>`).join("") + `</div>`;
+    if (p.expo) h += `<div class="chips" data-sel="${p.id}">` + [{nome:"Solo calze"}].concat(p.expo).map((e,i) => `<button type="button" data-v="${i}">${esc(e.nome)}${e.n ? " ("+(e.regola==="esatto"?"":"da ")+e.n+" pz, omaggio)" : ""}</button>`).join("") + `</div>`;
+    const voci = p.tipo === "steli" ? p.steli.map(s => [s[0], s[1]]) : p.taglie.map(t => [t, "T. " + t]);
+    h += `<p class="lab">${p.tipo === "steli" ? "Quanti per stelo" : "Quanti per taglia"}</p><div class="griglia">` + voci.map(v => `<div class="cl"><span>${esc(v[1])}</span>${stepper(p.id+"|"+v[0], p.nome+" "+v[1])}</div>`).join("") + `</div>`;
+    h += `<p class="stato" data-stato="${p.id}"></p>`;
+  } else if (p.tipo === "pacchetto"){
+    h += `<div class="pacs chips" data-sel="${p.id}">` + p.pac.map((x,i) => `<button type="button" data-v="${i}"><b>Tool ${x.n}</b><span>${x.n} ${esc(p.tpms)} + 1 ${esc(p.strum)}</span><span class="pz"><s>${euro(x.l)}</s> ${euro(x.p)} <i>+ IVA</i></span></button>`).join("") + `</div>`;
+    h += `<div class="righe"><div class="rg"><div class="nm">Quanti pacchetti<small data-pl="${p.id}"></small></div>${stepper(p.id+"|pac", p.nome+" pacchetti")}</div></div>`;
+    h += `<p class="lab">Dividi i sensori per stelo</p><div class="griglia">` + p.steli.map(s => `<div class="cl"><span>${esc(s[1])}</span>${stepper(p.id+"|"+s[0], p.nome+" "+s[1])}</div>`).join("") + `</div>`;
+    h += `<p class="stato" data-stato="${p.id}"></p>`;
+  } else if (p.tipo === "lista"){
+    h += `<div class="righe">` + p.art.map(a => `<div class="rg"><div class="nm">${esc(a[1])}<small><em>${euro(a[2])}</em>${a[3] ? " <s>"+euro(a[3])+"</s>" : ""} + IVA${a[4] ? " · a multipli di "+a[4] : ""}</small></div>${stepper(p.id+"|"+a[0], a[1], a[4])}</div>`).join("") + `</div>`;
+    h += `<p class="stato" data-stato="${p.id}"></p>`;
+  } else if (p.tipo === "catalogo"){
+    h += `<p class="lab">Diametro</p><div class="chips" data-sel="${p.id}-d">` + ["16","17,5","19,5","22,5"].map((d,i) => `<button type="button" data-v="${i}">${d}"</button>`).join("") + `</div>`;
+    h += `<p class="lab">Tipo</p><div class="chips" data-sel="${p.id}-t">` + ["Tutte","Acciaio","Lega"].map((d,i) => `<button type="button" data-v="${i}">${d}</button>`).join("") + `</div>`;
+    h += `<p class="stato" data-vuoto="${p.id}">Scegli il diametro per vedere le ruote in offerta.</p><div class="righe">` + TRUCK.slice().sort((a,b) => a[10]-b[10]).map(r => `<div class="rg" data-tr="${r[5]}|${r[1]}" hidden><div class="nm">${r[4]}×${r[5]} · ET${r[6]}<small>${esc(r[2])} ${r[1].toLowerCase()} · ${esc(r[3])} · ${r[7]} fori ${r[8]}${foro(r) ? " · foro Ø" + foro(r) : ""}</small><small>${r[0]} · <b>${r[11]} pz</b> a stock</small><small><em>${euro(r[10])}</em> + IVA</small></div>${stepper(p.id+"|"+r[0], r[0])}</div>`).join("") + `</div>`;
+    h += `<p class="stato" data-stato="${p.id}"></p>`;
+  } else if (p.tipo === "richiesta"){
+    h += `<input class="campo" type="text" data-t="${p.id}" placeholder="${esc(p.campo)}" aria-label="${esc(p.nome)}: ${esc(p.campo)}">`;
+    h += `<p class="stato">Lo trovo nel tuo ordine: ti rispondo con prezzi e disponibilità.</p>`;
+  }
+  return h + `</div>`;
+}
+document.getElementById("sezioni").innerHTML = SEZ.map(z => `<details class="sez" id="${z.id}" open><summary><span class="tt">${z.nome}</span><span class="sx"><i class="badge" data-ok="${z.id}"></i><i class="cn">${z.id === "truck" ? "52 ruote" : z.prod.length + " " + (z.prod.length === 1 ? "offerta" : "offerte")}</i><span class="cv" aria-hidden="true">⌄</span></span></summary><div class="cbody">${z.prod.map(htmlProd).join("")}</div></details>`).join("");
+
+/* ---------- calcolo ---------- */
+const PROD = {}; SEZ.forEach(z => z.prod.forEach(p => { p.sez = z.id; PROD[p.id] = p; }));
+const somma = (p, chiavi) => chiavi.reduce((a, k) => a + Q(p.id + "|" + k), 0);
+
+function calcola(p){
+  /* ritorna {righe:[{nome,det,tot}], pz, err, stato, cls, fascia} */
+  const r = {righe:[], pz:0, err:"", stato:"", cls:""};
+  if (p.tipo === "steli" || p.tipo === "taglie"){
+    const voci = p.tipo === "steli" ? p.steli.map(s => s[0]) : p.taglie;
+    const n = somma(p, voci); r.pz = n; if (!n) { r.stato = p.tipo === "steli" ? "Minimo " + p.min + " pezzi in totale." : "Minimo " + p.min + " pezzi in totale, anche di taglie diverse."; return r; }
+    const ex = p.expo && S.sel[p.id] ? p.expo[S.sel[p.id] - 1] : null;
+    let prezzo = null;
+    if (ex){
+      if (ex.regola === "esatto" && n !== ex.n) r.err = p.nome + ": con l'" + ex.nome.toLowerCase() + " servono esattamente " + ex.n + " pezzi (ora " + n + ").";
+      else if (ex.regola === "min" && n < ex.n) r.err = p.nome + ": con l'" + ex.nome.toLowerCase() + " ne servono almeno " + ex.n + " (mancano " + (ex.n - n) + ").";
+      else prezzo = ex.p;
+    } else {
+      const f = tier(p.fasce, n);
+      if (!f) r.err = p.nome + ": minimo " + p.min + " pezzi, ne mancano " + (p.min - n) + ".";
+      else { prezzo = f.p; r.fascia = f.n; }
+    }
+    if (r.err) { r.stato = r.err.replace(p.nome + ": ", ""); r.cls = "bad"; return r; }
+    const tot = n * prezzo;
+    const det = voci.filter(v => Q(p.id+"|"+v)).map(v => (p.tipo === "steli" ? p.steli.find(s => s[0] === v)[1] + " (" + v + ")" : "taglia " + v + " (" + p.cod(v) + ")") + ": " + Q(p.id+"|"+v));
+    r.righe.push({nome: p.nome + (ex ? " + " + ex.nome + " omaggio" : ""), det: n + " pz × " + euro(prezzo), sub: det, tot});
+    r.stato = n + " pz × " + euro(prezzo) + " = " + euro(tot) + (p.nota ? " · " + p.nota(n) : ""); r.cls = "ok";
+  } else if (p.tipo === "pacchetto"){
+    const i = S.sel[p.id] != null ? S.sel[p.id] : null, k = Q(p.id+"|pac"), voci = p.steli.map(s => s[0]), n = somma(p, voci);
+    r.pz = k + n;
+    if (i === null) { if (k || n) { r.err = p.nome + ": scegli il pacchetto (" + p.pac.map(x => x.n).join(", ") + " sensori)."; r.stato = "Scegli prima il pacchetto."; r.cls = "bad"; } else r.stato = "Scegli il pacchetto, poi dividi i sensori."; return r; }
+    const P = p.pac[i], serve = k * P.n;
+    if (!k) { if (n) { r.err = p.nome + ": indica quanti pacchetti."; r.stato = "Indica quanti pacchetti."; r.cls = "bad"; } else r.stato = "Pacchetto da " + P.n + " sensori a " + euro(P.p) + "."; return r; }
+    if (n !== serve) { r.err = p.nome + ": i sensori devono essere " + serve + " (ora " + n + ")."; r.stato = "Sensori divisi: " + n + " su " + serve + "."; r.cls = "bad"; return r; }
+    const tot = k * P.p;
+    r.righe.push({nome: p.nome + " · pacchetto da " + P.n, det: k + " × " + euro(P.p), sub: p.steli.filter(s => Q(p.id+"|"+s[0])).map(s => s[1] + " (" + s[0] + "): " + Q(p.id+"|"+s[0])), tot});
+    r.stato = "✓ " + k + (k === 1 ? " pacchetto" : " pacchetti") + " = " + euro(tot); r.cls = "ok";
+  } else if (p.tipo === "lista"){
+    p.art.forEach(a => { const n = Q(p.id+"|"+a[0]); if (!n) return; r.pz += n;
+      if (a[4] && n % a[4]) { r.err = a[1] + ": a multipli di " + a[4] + " pezzi."; return; }
+      r.righe.push({nome: a[1] + " (" + a[0] + ")", det: n + " × " + euro(a[2]), sub: [], tot: n * a[2]}); });
+    if (r.err) { r.stato = r.err; r.cls = "bad"; }
+    else if (r.righe.length) { r.stato = "✓ " + euro(r.righe.reduce((s, x) => s + x.tot, 0)); r.cls = "ok"; }
+  } else if (p.tipo === "catalogo"){
+    TRUCK.forEach(x => { const n = Q(p.id+"|"+x[0]); if (!n) return; r.pz += n;
+      if (n > x[11] && !r.err) r.err = "Ruota " + x[0] + ": a stock ce ne sono " + x[11] + ".";
+      r.righe.push({nome: "Ruota autocarro " + x[2] + " " + x[4] + "×" + x[5] + " ET" + x[6] + (foro(x) ? " foro " + foro(x) : "") + " " + x[3] + " (" + x[0] + ")", det: n + " × " + euro(x[10]), sub: [], tot: n * x[10]}); });
+    if (r.err) { r.stato = r.err; r.cls = "bad"; }
+    else if (r.righe.length) { r.stato = "✓ " + r.pz + " ruote = " + euro(r.righe.reduce((s, x) => s + x.tot, 0)); r.cls = "ok"; }
+  } else if (p.tipo === "richiesta"){
+    const t = (S.txt[p.id] || "").trim(); if (t) { r.pz = 1; r.rich = t; }
+  }
+  return r;
+}
+
+/* ---------- messaggio WhatsApp ---------- */
+function messaggio(R){
+  let m = "Ciao Matteo, ordine Black Friday (25/11–6/12):\n", tot = 0;
+  R.forEach(x => x.r.righe.forEach(l => { tot += l.tot; m += "\n• " + l.nome + ": " + l.det + " = " + euro(l.tot); l.sub.forEach(s => m += "\n   – " + s); }));
+  if (tot) m += "\n\nTotale netto: " + euro(tot) + " + IVA";
+  const ric = R.filter(x => x.r.rich);
+  if (ric.length) m += "\n\nVorrei un'offerta per:" + ric.map(x => "\n• " + (x.p.voce || x.p.nome) + ": " + x.r.rich).join("");
+  if (S.off.trim()) m += "\n\nRivenditore: " + S.off.trim();
+  return m + "\n\nGrazie!";
+}
+const WA = t => "https://wa.me/" + TEL + "?text=" + encodeURIComponent(t);
+const WAI = '<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>';
+
+/* ---------- aggiorna tutto ---------- */
+function aggiorna(){
+  const R = Object.values(PROD).map(p => ({p, r: calcola(p)}));
+  let tot = 0, voci = 0, err = "";
+  R.forEach(({p, r}) => {
+    r.righe.forEach(l => { tot += l.tot; voci++; }); if (r.rich) voci++;
+    if (r.err && !err) err = r.err;
+    const st = document.querySelector(`[data-stato="${p.id}"]`); if (st) { st.textContent = r.stato; st.className = "stato " + r.cls; }
+    if (p.fasce) p.fasce.forEach(f => { const e = document.querySelector(`[data-f="${p.id}-${f.n}"]`); if (e) e.classList.toggle("on", r.fascia === f.n); });
+    const pl = document.querySelector(`[data-pl="${p.id}"]`); if (pl) { const i = S.sel[p.id]; pl.textContent = i != null ? "da " + p.pac[i].n + " sensori · " + euro(p.pac[i].p) + " l'uno" : "scegli prima il pacchetto"; }
+  });
+  document.querySelectorAll(".st input").forEach(i => { const v = Q(i.dataset.k); if (document.activeElement !== i) i.value = v || ""; i.parentNode.classList.toggle("on", v > 0); });
+  { const di = S.sel["rtruck-d"], ti = S.sel["rtruck-t"] || 0, D = ["16","17,5","19,5","22,5"][di], T = ["","Acciaio","Lega"][ti];
+    document.querySelectorAll("[data-tr]").forEach(e => { const [d, t] = e.dataset.tr.split("|"); e.hidden = !(D && d === D && (!T || t === T)) && !Q("rtruck|" + e.querySelector("input").dataset.k.split("|")[1]); });
+    const v = document.querySelector('[data-vuoto="rtruck"]'); if (v) v.hidden = !!D; }
+  document.querySelectorAll("[data-sel]").forEach(c => { const id = c.dataset.sel, v = S.sel[id] != null ? S.sel[id] : (id === "rtruck-t" ? 0 : (PROD[id] && PROD[id].expo ? 0 : -1)); c.querySelectorAll("button").forEach(b => b.classList.toggle("on", Number(b.dataset.v) === v)); });
+  SEZ.forEach(z => { const n = R.filter(x => x.p.sez === z.id && (x.r.righe.length || x.r.rich)).length; document.querySelector(`[data-ok="${z.id}"]`).textContent = n ? n + " nell'ordine" : ""; });
+  /* riepilogo */
+  let h = "";
+  R.forEach(({r}) => r.righe.forEach(l => h += `<div class="line"><div><b>${esc(l.nome)}</b><small>${esc(l.det)}${l.sub.length ? " · " + esc(l.sub.join(", ")) : ""}</small></div><span class="t">${euro(l.tot)}</span></div>`));
+  R.filter(x => x.r.rich).forEach(({p, r}) => h += `<div class="line"><div><b>${esc(p.voce || p.nome)}</b><small>${esc(r.rich)}</small></div><span class="t">da quotare</span></div>`);
+  document.getElementById("righe").innerHTML = h || `<p class="vuoto">Ancora niente: apri una tendina e metti le quantità con + e −.</p>`;
+  document.getElementById("totale").textContent = euro(tot);
+  const ok = voci > 0 && !err, a = document.getElementById("invia");
+  a.setAttribute("aria-disabled", ok ? "false" : "true"); a.href = ok ? WA(messaggio(R)) : "#";
+  document.getElementById("msg").textContent = err;
+  document.getElementById("dock").innerHTML = voci
+    ? `<div class="info"><small>${voci} ${voci === 1 ? "voce" : "voci"} nell'ordine</small><strong>${euro(tot)}</strong></div><a href="#ordine">Vai all'ordine ›</a>`
+    : `<a class="solo" href="${WA("Ciao Matteo, ho visto le ruote autocarro Black Friday. Mi interessa: ")}" target="_blank" rel="noopener">${WAI}Scrivimi su WhatsApp</a>`;
+  salva();
+}
+
+/* ---------- eventi ---------- */
+const setQ = (k, v) => { v = Math.max(0, Math.floor(Number(v) || 0)); if (v) S.q[k] = v; else delete S.q[k]; aggiorna(); };
+document.addEventListener("click", e => {
+  const b = e.target.closest(".st button"); if (b) { const k = b.parentNode.dataset.k; setQ(k, Q(k) + Number(b.dataset.d)); return; }
+  const c = e.target.closest("[data-sel] button"); if (c) { const id = c.parentNode.dataset.sel, v = Number(c.dataset.v); S.sel[id] = v; if (PROD[id] && PROD[id].tipo === "pacchetto" && !Q(id + "|pac")) S.q[id + "|pac"] = 1; aggiorna(); return; }
+  const a = e.target.closest('a[href^="#p-"], a[href="#ordine"]');
+  if (a) { const t = document.querySelector(a.getAttribute("href")); if (!t) return; e.preventDefault(); const d = t.closest("details"); if (d) d.open = true; requestAnimationFrame(() => t.scrollIntoView({behavior:"smooth", block:"start"})); }
+});
+document.addEventListener("input", e => {
+  const i = e.target;
+  if (i.matches(".st input")) { const v = Math.max(0, Math.floor(Number(i.value) || 0)); if (v) S.q[i.dataset.k] = v; else delete S.q[i.dataset.k]; aggiorna(); }
+  else if (i.dataset.t) { S.txt[i.dataset.t] = i.value; aggiorna(); }
+  else if (i.id === "officina") { S.off = i.value; aggiorna(); }
+});
+document.getElementById("azzera").addEventListener("click", () => { S = {q:{}, sel:{}, txt:{}, off:""}; document.querySelectorAll("[data-t]").forEach(i => i.value = ""); document.getElementById("officina").value = ""; aggiorna(); });
+document.querySelectorAll("[data-t]").forEach(i => i.value = S.txt[i.dataset.t] || "");
+document.getElementById("officina").value = S.off || "";
+aggiorna();
+
+/* ---------- conto alla rovescia ---------- */
+const $ = id => document.getElementById(id);
+function tic(){
+  const ora = new Date(), prima = ora < INIZIO; let ms = (prima ? INIZIO : FINE) - ora;
+  if (ms <= 0) { $("timerTesto").textContent = "Black Friday concluso"; ms = 0; }
+  else $("timerTesto").textContent = prima ? "Il Black Friday parte tra" : "Black Friday: finisce il 6 dicembre";
+  const s = Math.floor(ms / 1000);
+  $("gg").textContent = Math.floor(s / 86400); $("hh").textContent = String(Math.floor(s % 86400 / 3600)).padStart(2, "0");
+  $("mm").textContent = String(Math.floor(s % 3600 / 60)).padStart(2, "0"); $("ss").textContent = String(s % 60).padStart(2, "0");
+}
+tic(); setInterval(tic, 1000);
+})();
+</script>
+</body>
+</html>
