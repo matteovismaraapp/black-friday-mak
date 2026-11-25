@@ -91,6 +91,31 @@ h2 em{font-style:normal;color:var(--red)}
 .note{margin:14px 16px 0;padding:14px;background:var(--card);border-radius:12px;font-size:13px;color:var(--mute);line-height:1.45}
 .note b{color:var(--ink)}
 
+
+/* menu categorie (stile pulsanti) */
+.pick{margin:0 0 12px;background:#ffe27a;border:2px solid var(--ink);border-radius:10px;padding:10px 14px;font-weight:700;font-size:17px;text-align:center}
+.pick::after{content:" ↓"}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.menu a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:3px;text-decoration:none;border:3px solid var(--red);border-radius:12px;padding:12px 30px 12px 12px;min-height:86px;background:#fff;box-shadow:0 4px 0 var(--red)}
+.menu a::after{content:"›";position:absolute;right:10px;top:50%;transform:translateY(-55%);font:800 28px/1 var(--testo);color:var(--red)}
+.menu a:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red);background:var(--red-soft)}
+.menu b{font-family:var(--titolo);font-weight:800;font-size:22px;line-height:1.02;text-transform:uppercase}
+.menu small{color:var(--red);font-weight:700;font-size:13px;line-height:1.2}
+
+/* sezioni a tendina */
+.sezioni{padding:8px 16px 0;display:flex;flex-direction:column;gap:12px}
+.sez{scroll-margin-top:70px}
+.sez summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:10px;padding:14px 16px;min-height:56px}
+.sez summary::-webkit-details-marker{display:none}
+.sez summary:active{background:#33373d}
+.sez .st{font-family:var(--titolo);font-weight:800;font-size:26px;text-transform:uppercase;line-height:1}
+.sez .sx{margin-left:auto;display:flex;align-items:center;gap:10px}
+.sez .cn{font-style:normal;color:#ffd5d6;font-weight:600;font-size:13px;white-space:nowrap}
+.sez .cv{font:800 24px/1 var(--testo);transition:transform .15s}
+.sez[open] .cv{transform:rotate(180deg)}
+.sez[open] summary{border-radius:10px 10px 0 0}
+.cbody{border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px;padding:0 12px 6px}
+
 /* barra whatsapp */
 .wa{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .wa a{max-width:512px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:12px;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;font-size:17px}
@@ -149,67 +174,90 @@ h2 em{font-style:normal;color:var(--red)}
   </nav>
 </section>
 
-<!-- TUTTE LE PROMO -->
-<section>
-  <h2>Tutte le <em>promo</em></h2>
-  <p class="sub2">Prezzi netti IVA esclusa · tocca per aprire</p>
+<!-- MENU CATEGORIE -->
+<section id="menu">
+  <p class="pick">Seleziona il prodotto che ti interessa</p>
+  <nav class="menu" aria-label="Categorie">
+    <a href="#sensori"><b>Sensori TPMS</b><small>MULTIsens, HUF, Autel</small></a>
+    <a href="#strumenti"><b>Strumenti TPMS</b><small>fino a −50%</small></a>
+    <a href="#diagnosi"><b>Diagnosi</b><small>fino a −30%</small></a>
+    <a href="#npk"><b>NoProblemKit</b><small>EZ Repair 15 €, ruotini −15%</small></a>
+    <a href="#ruote"><b>Ruote MAK</b><small>fino a −50%</small></a>
+    <a href="#truck"><b>Truck</b><small>fino a −30%</small></a>
+  </nav>
+</section>
 
-  <div class="gruppo">
-    <h3>Sensori TPMS</h3>
+<div class="sezioni">
+<details class="sez" id="sensori">
+  <summary><span class="st">Sensori TPMS</span><span class="sx"><i class="cn">3 offerte</i><span class="cv" aria-hidden="true">⌄</span></span></summary>
+  <div class="cbody">
     <a class="riga" href="black-friday-multisens/"><img src="img/t-multisens.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>MATE MULTIsens MP6</b><small>100 pezzi anche misti</small></div><div class="px">9,90 €<small>cad. + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
     <a class="riga" href="black-friday-huf-ecs/"><img src="img/t-huf-ecs.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Refill HUF ECS</b><small>12, 20, 50 e 100 pezzi</small></div><div class="px">−15%<small>da 12,47 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
     <a class="riga" href="black-friday-autel-mx/"><img src="img/t-autel-mx.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Refill Autel MX</b><small>da 12 a 300 pezzi</small></div><div class="px">−15%<small>da 13,01 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
-    <a class="riga" href="black-friday-truck/"><img src="img/t-truck.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>TPMS Truck</b><small>sensori HUF e Autel, strumenti −15%</small></div><div class="px">−30%<small>38,50 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
   </div>
-
-  <div class="gruppo">
-    <h3>Strumenti TPMS</h3>
+</details>
+<details class="sez" id="strumenti">
+  <summary><span class="st">Strumenti TPMS</span><span class="sx"><i class="cn">5 offerte</i><span class="cv" aria-hidden="true">⌄</span></span></summary>
+  <div class="cbody">
     <a class="riga" href="black-friday-combo-autel/"><img src="img/t-combo-autel.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Combo ITS600 + TBE200</b><small>tablet TPMS + misuratore laser</small></div><div class="px">−50%<small>450 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
     <a class="riga" href="black-friday-ts900/"><img src="img/t-ts900.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Autel TS900</b><small>con SGW FULL 12 mesi: 804 €</small></div><div class="px">−40%<small>414 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
     <a class="riga" href="black-friday-tool8-huf/"><img src="img/t-tool8-huf.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Tool HUF: MA41 + 8, 16, 30 sensori</b><small>pacchetti con cavo OBD</small></div><div class="px">−15%<small>da 238 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
     <a class="riga" href="black-friday-tool-autel/"><img src="img/t-tool-autel.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Tool Autel: TS508 + 12, 16, 30 sensori</b><small>pacchetti con cavo OBD</small></div><div class="px">−15%<small>da 272 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
     <a class="riga" href="black-friday-retrofit/"><img src="img/t-retrofit.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Retrofit Kit TPMS</b><small>P451 pickup e camper, HT602 6 ruote</small></div><div class="px">−20%<small>da 116 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
   </div>
-
-  <div class="gruppo">
-    <h3>Diagnosi</h3>
+</details>
+<details class="sez" id="diagnosi">
+  <summary><span class="st">Diagnosi</span><span class="sx"><i class="cn">1 offerta</i><span class="cv" aria-hidden="true">⌄</span></span></summary>
+  <div class="cbody">
     <a class="riga" href="black-friday-diagnosi-autel/"><img src="img/t-diagnosi-autel.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Diagnosi Autel MS</b><small>assistenza 12 mesi gratis</small></div><div class="px">−30%<small>da 1.540 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
   </div>
-
-  <div class="gruppo">
-    <h3>NoProblemKit</h3>
-    <a class="riga" href="black-friday-ez-repair/"><img src="img/t-ez-repair.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>EZ Repair gonfia e ripara</b><small>minimo 10 pezzi</small></div><div class="px">15 €<small>netto + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
-    <a class="riga" href="black-friday-ez-drive/"><img src="img/t-ez-drive.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>EZ Drive kit di emergenza</b><small>anche 1 solo pezzo</small></div><div class="px">45 €<small>netto + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
-    <a class="riga" href="black-friday-multigrip/"><img src="img/t-multigrip.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Calze Multigrip The Original</b><small>tutti i pacchetti, espositore omaggio</small></div><div class="px">−15%<small>da 21,88 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
-    <a class="riga" href="black-friday-calze-light/"><img src="img/t-calze-light.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Calze Multigrip Light 2.0</b><small>tutti i pacchetti, espositore omaggio</small></div><div class="px">−15%<small>da 12,62 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
-  </div>
-</section>
-
-<!-- RUOTE E RUOTINI -->
-<section id="ruote">
-  <h2>Ruote e <em>ruotini</em></h2>
-  <p class="sub2">Extra sconto che si somma alle tue condizioni</p>
-  <div class="extra">
-    <div class="box">
-      <div class="pct"><small>fino al</small>-50%</div>
-      <b>Ruote in lega MAK 2026</b>
-      <p>OVS al 50%, altre ruote selezionate dal -15% al -30%</p>
-      <div class="az"><a id="waMak" href="#">Chiedimi le ruote per la tua auto</a><a href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Vedi sul portale B2B</a></div>
-    </div>
+</details>
+<details class="sez" id="npk">
+  <summary><span class="st">NoProblemKit</span><span class="sx"><i class="cn">5 offerte</i><span class="cv" aria-hidden="true">⌄</span></span></summary>
+  <div class="cbody">
+    <div class="extra" style="margin:12px 0 4px">
     <div class="box">
       <div class="pct"><small>extra</small>-15%</div>
       <b>Ruotini NoProblemKit</b>
       <p>Su ruotini a magazzino o assemblabili entro 3 giorni lavorativi</p>
       <div class="az"><a id="waRuotini" href="#">Chiedimi il ruotino disponibile</a></div>
     </div>
+    </div>
+    <a class="riga" href="black-friday-ez-repair/"><img src="img/t-ez-repair.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>EZ Repair gonfia e ripara</b><small>minimo 10 pezzi</small></div><div class="px">15 €<small>netto + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-ez-drive/"><img src="img/t-ez-drive.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>EZ Drive kit di emergenza</b><small>anche 1 solo pezzo</small></div><div class="px">45 €<small>netto + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-multigrip/"><img src="img/t-multigrip.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Calze Multigrip The Original</b><small>tutti i pacchetti, espositore omaggio</small></div><div class="px">−15%<small>da 21,88 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-calze-light/"><img src="img/t-calze-light.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Calze Multigrip Light 2.0</b><small>tutti i pacchetti, espositore omaggio</small></div><div class="px">−15%<small>da 12,62 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+  </div>
+</details>
+<details class="sez" id="ruote">
+  <summary><span class="st">Ruote MAK</span><span class="sx"><i class="cn">fino a −50%</i><span class="cv" aria-hidden="true">⌄</span></span></summary>
+  <div class="cbody">
+    <div class="extra" style="margin:12px 0 4px">
+    <div class="box">
+      <div class="pct"><small>fino al</small>-50%</div>
+      <b>Ruote in lega MAK 2026</b>
+      <p>OVS al 50%, altre ruote selezionate dal -15% al -30%</p>
+      <div class="az"><a id="waMak" href="#">Chiedimi le ruote per la tua auto</a><a href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Vedi sul portale B2B</a></div>
+    </div>
+    </div>
+  </div>
+</details>
+<details class="sez" id="truck">
+  <summary><span class="st">Truck</span><span class="sx"><i class="cn">2 offerte</i><span class="cv" aria-hidden="true">⌄</span></span></summary>
+  <div class="cbody">
+    <a class="riga" href="black-friday-truck/"><img src="img/t-truck.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>TPMS Truck</b><small>sensori HUF e Autel, strumenti −15%</small></div><div class="px">−30%<small>38,50 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <div class="extra" style="margin:12px 0 4px">
     <div class="box">
       <div class="pct"><small>extra</small>-20%</div>
       <b>Ruote autocarro selezionate</b>
       <p>Maxion, Lead, JMS e Pomlead a magazzino, su codici selezionati</p>
       <div class="az"><a id="waTruck" href="#">Chiedimi i codici in promo</a></div>
     </div>
+    </div>
   </div>
-</section>
+</details>
+</div>
+
 
 <div class="contatti">
   <a href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Portale B2B</a>
@@ -246,6 +294,13 @@ function tic(){
   $("ss").textContent = String(s%60).padStart(2,"0");
 }
 tic(); setInterval(tic, 1000);
+
+/* tendine: il menu apre la sezione giusta */
+document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',e=>{
+  const d=document.querySelector(a.getAttribute('href'));if(!d)return;
+  e.preventDefault();d.open=true;requestAnimationFrame(()=>d.scrollIntoView({behavior:'smooth',block:'start'}));
+}));
+
 </script>
 </body>
 </html>
