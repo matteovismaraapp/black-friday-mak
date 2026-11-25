@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Friday MAK · Tutte le promo</title>
+<meta name="description" content="Black Friday B2B dal 25 novembre al 6 dicembre 2026: tutte le promo MAK, NoProblemKit, MATE e Truck in una pagina. TPMS e diagnosi, ruote in lega MAK fino al -50%, ruotini NPK -15%, ruote autocarro selezionate. Prezzi netti IVA esclusa.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tutte le promo del Black Friday di MAK le trovi qui!!">
+<meta property="og:description" content="Dal 25 novembre al 6 dicembre: sensori TPMS a 9,90 €, combo Autel -50%, TS900 -40%, ruote MAK fino al -50%, ruotini NPK -15%. Tocca e ordina su WhatsApp.">
+<meta property="og:image" content="https://matteovismaraapp.github.io/black-friday-mak/anteprima.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://matteovismaraapp.github.io/black-friday-mak/">
+<meta name="theme-color" content="#14161a">
+<link rel="apple-touch-icon" href="icona.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#da2128; --red-soft:#fdecec; --ink:#14161a; --mute:#5d626b; --card:#f3f4f6; --line:#e2e4e8; --bg:#fff; --verde:#25d366; --oro:#f5c400;
+  --titolo:"DIN Condensed","Avenir Next Condensed","Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --testo:"Avenir Next",-apple-system,system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--testo);font-size:16px;line-height:1.4}
+html{scroll-padding-top:70px}
+body{padding-top:calc(60px + env(safe-area-inset-top));padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+a{color:inherit}
+.wrap{max-width:540px;margin:0 auto;overflow:hidden}
+
+/* conto alla rovescia */
+.timer{position:fixed;top:0;left:0;right:0;z-index:25;background:var(--ink);color:#fff;text-align:center;
+  padding:calc(8px + env(safe-area-inset-top)) 12px 8px;box-shadow:0 4px 16px rgba(0,0,0,.3);text-decoration:none;display:block}
+.timer small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--oro);font-weight:700}
+.cifre{display:flex;justify-content:center;gap:10px;font-family:var(--titolo);font-weight:800;font-size:26px;line-height:1;margin-top:3px}
+.cifre span b{display:inline-block;min-width:1.25em}
+.cifre span i{font-style:normal;font-size:13px;opacity:.8;margin-left:1px}
+
+/* testata compatta */
+.hero{background:var(--ink);color:#fff;padding:16px 16px 18px;border-bottom:4px solid var(--red)}
+.hero .pre{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c9ccd2;margin:0}
+.hero h1{margin:2px 0 10px;font-family:var(--titolo);font-weight:800;font-style:italic;font-size:50px;line-height:.95;text-transform:uppercase;letter-spacing:.3px}
+.hero h1 em{font-style:inherit;color:var(--red)}
+.hero .date{display:inline-block;background:var(--oro);color:var(--ink);font-family:var(--titolo);font-weight:800;font-size:20px;padding:4px 12px 2px;transform:skewX(-10deg);text-transform:uppercase}
+.loghi{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.loghi img{height:17px;width:auto;max-width:23%;object-fit:contain;display:block}
+.loghi img.trk{height:21px}
+
+section{padding:22px 16px 4px}
+h2{font-family:var(--titolo);font-weight:800;font-size:28px;text-transform:uppercase;margin:0 0 4px;line-height:1}
+h2 em{font-style:normal;color:var(--red)}
+.sub2{color:var(--mute);margin:0 0 12px;font-size:14px}
+
+/* hot deals: pulsanti */
+.hot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.deal{position:relative;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);border:3px solid var(--red);border-radius:12px;
+  padding:10px 30px 10px 10px;min-height:150px;background:#fff;box-shadow:0 4px 0 var(--red)}
+.deal::after{content:"›";position:absolute;right:9px;top:50%;transform:translateY(-55%);font:800 30px/1 var(--testo);color:var(--red)}
+.deal:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red);background:var(--red-soft)}
+.deal img{width:64px;height:64px;object-fit:contain;display:block}
+.deal b{font-family:var(--titolo);font-weight:800;font-size:20px;line-height:1.02;text-transform:uppercase}
+.deal .p{font-family:var(--titolo);font-weight:800;font-size:30px;line-height:1;color:var(--red)}
+.deal .p small{font-family:var(--testo);font-size:11px;font-weight:600;color:var(--mute);margin-left:2px}
+.deal .n{font-size:12px;color:var(--mute);line-height:1.2}
+
+/* elenco locandine */
+.gruppo h3{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mute);margin:14px 0 4px;font-weight:700}
+.riga{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);min-height:68px}
+.riga:active{background:var(--card)}
+.riga img{width:96px;height:50px;object-fit:cover;border-radius:6px;flex:none;background:var(--card)}
+.riga .tx{flex:1;min-width:0}
+.riga .tx b{display:block;font-size:15px;line-height:1.2}
+.riga .tx small{display:block;font-size:13px;color:var(--mute);line-height:1.25;margin-top:2px}
+.riga .px{font-family:var(--titolo);font-weight:800;font-size:22px;color:var(--red);white-space:nowrap;text-align:right;line-height:1}
+.riga .px small{display:block;font-family:var(--testo);font-size:10px;color:var(--mute);font-weight:600;margin-top:2px}
+.riga .fr{flex:none;font:800 26px/1 var(--testo);color:var(--red);margin-left:-2px}
+
+/* ruote e ruotini */
+.extra{display:flex;flex-direction:column;gap:10px}
+.box{border:2px solid var(--ink);border-radius:14px;padding:14px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center}
+.box .pct{grid-row:span 2;font-family:var(--titolo);font-weight:800;font-size:52px;line-height:.9;color:var(--red);min-width:92px;text-align:center}
+.box .pct small{display:block;font-size:14px;color:var(--ink);letter-spacing:.5px}
+.box b{font-size:17px;line-height:1.2}
+.box p{margin:0;font-size:14px;color:var(--mute);line-height:1.35}
+.box .az{grid-column:1 / -1;display:flex;gap:8px;margin-top:8px}
+.box .az a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:46px;border-radius:10px;background:var(--card);color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;text-align:center;padding:4px 8px;line-height:1.15}
+
+.contatti{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 16px 0}
+.contatti a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border:2px solid var(--ink);border-radius:10px;text-decoration:none;font-weight:700;font-size:15px}
+.note{margin:14px 16px 0;padding:14px;background:var(--card);border-radius:12px;font-size:13px;color:var(--mute);line-height:1.45}
+.note b{color:var(--ink)}
+
+/* barra whatsapp */
+.wa{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.wa a{max-width:512px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:12px;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;font-size:17px}
+</style>
+</head>
+<body>
+
+<a class="timer" id="timer" href="#hot">
+  <small id="timerTesto">Black Friday: finisce il 6 dicembre</small>
+  <div class="cifre"><span><b id="gg">0</b><i>g</i></span><span><b id="hh">00</b><i>h</i></span><span><b id="mm">00</b><i>m</i></span><span><b id="ss">00</b><i>s</i></span></div>
+</a>
+
+<div class="wrap">
+
+<header class="hero">
+  <p class="pre">Promo B2B · tutte in una pagina</p>
+  <h1>Black <em>Friday</em></h1>
+  <div class="date">Dal 25 novembre al 6 dicembre</div>
+</header>
+<div class="loghi">
+  <img src="loghi/logo-mak.svg" alt="MAK">
+  <img src="loghi/logo-npk.svg" alt="NoProblemKit">
+  <img src="loghi/logo-mate.svg" alt="MATE">
+  <img class="trk" src="loghi/logo-trk.png" alt="Truck">
+</div>
+
+<!-- HOT DEALS -->
+<section id="hot">
+  <h2>Hot <em>deals</em></h2>
+  <p class="sub2">Tocca un'offerta per aprire la locandina e ordinare</p>
+  <nav class="hot" aria-label="Hot deals">
+    <a class="deal" href="black-friday-multisens/">
+      <img src="img/d-multisens.webp" alt="" width="64" height="64">
+      <b>Sensori MATE MULTIsens</b>
+      <span class="p">9,90 €<small>cad. + IVA</small></span>
+      <span class="n">da 100 pezzi, anche misti</span>
+    </a>
+    <a class="deal" href="black-friday-combo-autel/">
+      <img src="img/d-combo.webp" alt="" width="64" height="64">
+      <b>Combo ITS600 + TBE200</b>
+      <span class="p">450 €<small>+ IVA</small></span>
+      <span class="n">−50%, invece di 900&nbsp;€</span>
+    </a>
+    <a class="deal" href="black-friday-ts900/">
+      <img src="img/d-ts900.webp" alt="" width="64" height="64">
+      <b>Autel TS900</b>
+      <span class="p">414 €<small>+ IVA</small></span>
+      <span class="n">−40%, invece di 690&nbsp;€</span>
+    </a>
+    <a class="deal" href="black-friday-ez-repair/">
+      <img src="img/d-ezrepair.webp" alt="" width="64" height="64">
+      <b>NPK EZ Repair</b>
+      <span class="p">15 €<small>netto + IVA</small></span>
+      <span class="n">da 10 pezzi</span>
+    </a>
+  </nav>
+</section>
+
+<!-- TUTTE LE PROMO -->
+<section>
+  <h2>Tutte le <em>promo</em></h2>
+  <p class="sub2">Prezzi netti IVA esclusa · tocca per aprire</p>
+
+  <div class="gruppo">
+    <h3>Sensori TPMS</h3>
+    <a class="riga" href="black-friday-multisens/"><img src="img/t-multisens.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>MATE MULTIsens MP6</b><small>100 pezzi anche misti</small></div><div class="px">9,90 €<small>cad. + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-huf-ecs/"><img src="img/t-huf-ecs.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Refill HUF ECS</b><small>12, 20, 50 e 100 pezzi</small></div><div class="px">−15%<small>da 12,47 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-autel-mx/"><img src="img/t-autel-mx.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Refill Autel MX</b><small>da 12 a 300 pezzi</small></div><div class="px">−15%<small>da 13,01 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-truck/"><img src="img/t-truck.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>TPMS Truck</b><small>sensori HUF e Autel, strumenti −15%</small></div><div class="px">−30%<small>38,50 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+  </div>
+
+  <div class="gruppo">
+    <h3>Strumenti TPMS</h3>
+    <a class="riga" href="black-friday-combo-autel/"><img src="img/t-combo-autel.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Combo ITS600 + TBE200</b><small>tablet TPMS + misuratore laser</small></div><div class="px">−50%<small>450 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-ts900/"><img src="img/t-ts900.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Autel TS900</b><small>con SGW FULL 12 mesi: 804 €</small></div><div class="px">−40%<small>414 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-tool8-huf/"><img src="img/t-tool8-huf.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Tool HUF: MA41 + 8, 16, 30 sensori</b><small>pacchetti con cavo OBD</small></div><div class="px">−15%<small>da 238 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-tool-autel/"><img src="img/t-tool-autel.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Tool Autel: TS508 + 12, 16, 30 sensori</b><small>pacchetti con cavo OBD</small></div><div class="px">−15%<small>da 272 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-retrofit/"><img src="img/t-retrofit.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Retrofit Kit TPMS</b><small>P451 pickup e camper, HT602 6 ruote</small></div><div class="px">−20%<small>da 116 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+  </div>
+
+  <div class="gruppo">
+    <h3>Diagnosi</h3>
+    <a class="riga" href="black-friday-diagnosi-autel/"><img src="img/t-diagnosi-autel.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Diagnosi Autel MS</b><small>assistenza 12 mesi gratis</small></div><div class="px">−30%<small>da 1.540 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+  </div>
+
+  <div class="gruppo">
+    <h3>NoProblemKit</h3>
+    <a class="riga" href="black-friday-ez-repair/"><img src="img/t-ez-repair.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>EZ Repair gonfia e ripara</b><small>minimo 10 pezzi</small></div><div class="px">15 €<small>netto + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-ez-drive/"><img src="img/t-ez-drive.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>EZ Drive kit di emergenza</b><small>anche 1 solo pezzo</small></div><div class="px">45 €<small>netto + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-multigrip/"><img src="img/t-multigrip.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Calze Multigrip The Original</b><small>tutti i pacchetti, espositore omaggio</small></div><div class="px">−15%<small>da 21,88 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+    <a class="riga" href="black-friday-calze-light/"><img src="img/t-calze-light.webp" alt="" loading="lazy" width="96" height="50"><div class="tx"><b>Calze Multigrip Light 2.0</b><small>tutti i pacchetti, espositore omaggio</small></div><div class="px">−15%<small>da 12,62 € + IVA</small></div><span class="fr" aria-hidden="true">›</span></a>
+  </div>
+</section>
+
+<!-- RUOTE E RUOTINI -->
+<section id="ruote">
+  <h2>Ruote e <em>ruotini</em></h2>
+  <p class="sub2">Extra sconto che si somma alle tue condizioni</p>
+  <div class="extra">
+    <div class="box">
+      <div class="pct"><small>fino al</small>-50%</div>
+      <b>Ruote in lega MAK 2026</b>
+      <p>OVS al 50%, altre ruote selezionate dal -15% al -30%</p>
+      <div class="az"><a id="waMak" href="#">Chiedimi le ruote per la tua auto</a><a href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Vedi sul portale B2B</a></div>
+    </div>
+    <div class="box">
+      <div class="pct"><small>extra</small>-15%</div>
+      <b>Ruotini NoProblemKit</b>
+      <p>Su ruotini a magazzino o assemblabili entro 3 giorni lavorativi</p>
+      <div class="az"><a id="waRuotini" href="#">Chiedimi il ruotino disponibile</a></div>
+    </div>
+    <div class="box">
+      <div class="pct"><small>extra</small>-20%</div>
+      <b>Ruote autocarro selezionate</b>
+      <p>Maxion, Lead, JMS e Pomlead a magazzino, su codici selezionati</p>
+      <div class="az"><a id="waTruck" href="#">Chiedimi i codici in promo</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="contatti">
+  <a href="https://b2bshop.makwheels.it/" target="_blank" rel="noopener">Portale B2B</a>
+  <a href="tel:+393893146609">Chiamami</a>
+</div>
+
+<div class="note">
+  <b>Come funziona.</b> Tutte le promo valgono dal 25 novembre al 6 dicembre 2026. Prezzi netti IVA esclusa. Gli extra sconti si sommano alle tue condizioni (es. 10% + 15% = 23,5%). Solo articoli a magazzino; ruotini anche assemblabili entro 3 giorni lavorativi. Valido anche sui pacchetti TPMS, calze ed EZ Repair già in essere.
+</div>
+
+</div>
+
+<div class="wa"><a id="waMain" href="#"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Scrivimi su WhatsApp</a></div>
+
+<script>
+const PROMO = {telefono: "393893146609", inizio: new Date("2026-11-25T00:00:00+01:00"), fine: new Date("2026-12-06T23:59:59+01:00")};
+const wa = t => "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(t);
+document.getElementById("waMain").href = wa("Ciao Matteo, ho visto le promo Black Friday. Mi interessa: ");
+document.getElementById("waMak").href = wa("Ciao Matteo, Black Friday ruote in lega MAK: mi mandi le ruote in promo per questa auto?\nAuto: \nDiametro: ");
+document.getElementById("waRuotini").href = wa("Ciao Matteo, Black Friday ruotini NPK -15%: mi dici se hai disponibile il ruotino per questa auto?\nAuto: ");
+document.getElementById("waTruck").href = wa("Ciao Matteo, Black Friday ruote autocarro: mi mandi i codici in promo?\nMisura: ");
+
+const $ = id => document.getElementById(id);
+function tic(){
+  const ora = new Date();
+  const prima = ora < PROMO.inizio;
+  let ms = (prima ? PROMO.inizio : PROMO.fine) - ora;
+  if (ms <= 0){ $("timerTesto").textContent = "Black Friday concluso"; ms = 0; }
+  else $("timerTesto").textContent = prima ? "Il Black Friday parte tra" : "Black Friday: finisce il 6 dicembre";
+  const s = Math.floor(ms/1000);
+  $("gg").textContent = Math.floor(s/86400);
+  $("hh").textContent = String(Math.floor(s%86400/3600)).padStart(2,"0");
+  $("mm").textContent = String(Math.floor(s%3600/60)).padStart(2,"0");
+  $("ss").textContent = String(s%60).padStart(2,"0");
+}
+tic(); setInterval(tic, 1000);
+</script>
+</body>
+</html>
