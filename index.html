@@ -199,7 +199,7 @@ h2 em{font-style:normal;color:var(--red)}
   <h2>Il tuo <em>ordine</em></h2>
   <div id="righe"></div>
   <div class="tot"><span>Totale netto, IVA esclusa</span><strong id="totale">0,00 €</strong></div>
-  <input class="campo" id="officina" type="text" placeholder="Nome officina (facoltativo)" autocomplete="organization" aria-label="Nome officina">
+  <input class="campo" id="officina" type="text" placeholder="Nome rivenditore (facoltativo)" autocomplete="organization" aria-label="Nome rivenditore">
   <a class="inviare" id="invia" href="#" target="_blank" rel="noopener" aria-disabled="true">Invia l'ordine su WhatsApp</a>
   <p class="msg" id="msg" role="status"></p>
   <button class="azzera" id="azzera" type="button">Azzera l'ordine</button>
@@ -374,7 +374,7 @@ function messaggio(R){
   if (tot) m += "\n\nTotale netto: " + euro(tot) + " + IVA";
   const ric = R.filter(x => x.r.rich);
   if (ric.length) m += "\n\nVorrei un'offerta per:" + ric.map(x => "\n• " + x.p.nome + ": " + x.r.rich).join("");
-  if (S.off.trim()) m += "\n\nOfficina: " + S.off.trim();
+  if (S.off.trim()) m += "\n\nRivenditore: " + S.off.trim();
   return m + "\n\nGrazie!";
 }
 const WA = t => "https://wa.me/" + TEL + "?text=" + encodeURIComponent(t);

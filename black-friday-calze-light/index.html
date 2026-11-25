@@ -309,7 +309,7 @@ select:disabled{opacity:.45}
     <div class="veloci"><button type="button" id="azzera">Azzera</button><a href="#secTaglia" class="vtg">Trova la taglia ↑</a></div>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li>Puoi <b>mischiare le taglie</b>: conta il totale dei pezzi.</li>
@@ -462,17 +462,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (!n) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday calze NPK Multigrip Light 2.0* (25/11–6/12): −15% su tutti i pacchetti." : "ho visto la pagina delle calze NPK Multigrip Light 2.0.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday calze NPK Multigrip Light 2.0* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "queste calze NPK Multigrip Light 2.0") + ":\n";
       if (pac !== "calze") testo += "Pacchetto *" + PACCHETTI[pac].nome + "*\n";
       testo += TAGLIE.filter(t => q[t]).map(t => "• Taglia " + t + " (" + codice(t) + "): " + q[t] + " pz" + (misure[t].size ? " · " + [...misure[t]].join(", ") : "")).join("\n");
       testo += "\nTotale " + n + " pz a " + euro(c.cad) + " = " + euro(tot) + " netto IVA esclusa";
       if (!c.ok) testo += "\n(" + c.testo.replace(/^✓ /, "") + ")";
-      testo += "\n\nOfficina: " + off;
+      testo += "\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = !n ? "Voglio la promo calze Light: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = !n ? "Voglio la promo calze Light: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   function tick() {

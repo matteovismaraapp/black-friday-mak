@@ -243,7 +243,7 @@ footer b{color:var(--ink)}
       <div class="qta"><button type="button" data-d="-1" aria-label="Togli">−</button><span>0</span><button type="button" data-d="1" aria-label="Aggiungi">+</button></div></div>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li>Hai già l'ITS600? Il <b>TBE200</b> da solo si abbina al tablet in Wi-Fi in un minuto.</li>
@@ -332,14 +332,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (vuoto) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday COMBO AUTEL* (25/11–6/12): ITS600 + TBE200 a 450 € invece di 900, da soli a 315 €." : "ho visto la pagina di AUTEL ITS600 e TBE200.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday COMBO AUTEL* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "questi strumenti AUTEL") + ":\n";
       ARTICOLI.forEach((x, i) => { if (qta[i]) testo += "• " + x.cod + " " + x.nome + ": " + qta[i] + " pz a " + euro(prezzo(x)) + (bf() ? " (" + x.sconto + ")" : "") + "\n"; });
-      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = vuoto ? "Voglio la combo Autel: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = vuoto ? "Voglio la combo Autel: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   righe.forEach((r, i) => r.querySelectorAll(".qta button").forEach(b => b.addEventListener("click", () => {

@@ -207,8 +207,8 @@ footer b{color:var(--ink)}
     <div class="tacche"><span id="tacca0">0</span><span id="tacca20">12 pz · 14,03 €</span></div>
     <div class="stato" id="stato"></div>
     <div class="totale"><span id="totTesto">Totale indicativo IVA esclusa</span><b id="tot">–</b></div>
-    <label class="f" for="officina">Officina (facoltativo)</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <label class="f" for="officina">Rivenditore (facoltativo)</label>
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <p class="nota">Se preferisci, puoi ordinare da solo sul portale B2B con gli stessi codici.</p>
 </section>
@@ -384,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "\nTotale: " + n + " pz" +
         (fa.nome === "singolo" ? " (sotto il minimo di 12 per il refill)" : " a " + euro(fa.p) + " cad. IVA esclusa") +
         (rk.length ? "\n\nValvole di ricambio:\n" + rk.join("\n") + "\nTotale ricambi: " + euro(totKit()) + " IVA esclusa" : "") +
-        "\n\nOfficina: " + off;
+        "\n\nRivenditore: " + off;
       etichetta = n >= PROMO.minRefill ? "Invia l'ordine su WhatsApp" : "Invia (" + manca(PROMO.minRefill - n) + " al refill)";
     } else if (rk.length) {
       testo = "";

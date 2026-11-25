@@ -239,7 +239,7 @@ footer b{color:var(--ink)}
       <div class="qta"><button type="button" data-d="-10" aria-label="Togli 10">−</button><span>0</span><button type="button" data-d="10" aria-label="Aggiungi 10">+</button></div></div>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li>Ogni tocco su <b>+</b> aggiunge <b>10 pezzi</b>.</li>
@@ -319,14 +319,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (!qta) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday NPK EZ Repair* (25/11–6/12): 15 € al pezzo da 10 pezzi." : "ho visto la pagina del kit EZ Repair.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday NPK EZ Repair* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "questi kit EZ Repair") + ":\n";
       testo += "• " + KIT.cod + " " + KIT.nome + ": " + qta + " pz a " + euro(prezzo()) + "\n";
-      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = !qta ? "Voglio la promo EZ Repair: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = !qta ? "Voglio la promo EZ Repair: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   riga.querySelectorAll(".qta button").forEach(b => b.addEventListener("click", () => {

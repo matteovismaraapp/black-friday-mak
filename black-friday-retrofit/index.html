@@ -244,7 +244,7 @@ footer b{color:var(--ink)}
       <div class="qta"><button type="button" data-d="-1" aria-label="Togli">−</button><span>0</span><button type="button" data-d="1" aria-label="Aggiungi">+</button></div></div>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li><b>P451</b>: pickup e camper a 4 ruote. <b>HT602</b>: camper, rimorchi e autocarri a 6 ruote, fino a 11 tonnellate.</li>
@@ -330,14 +330,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (vuoto) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday Retrofit Kit TPMS* (25/11–6/12): P451 a 116 € e HT602 a 200 €." : "ho visto la pagina dei kit retrofit TPMS.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday Retrofit Kit TPMS* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "questi kit retrofit TPMS") + ":\n";
       KIT.forEach((x, i) => { if (qta[i]) testo += "• " + x.cod + " " + x.nome + ": " + qta[i] + " pz a " + euro(prezzo(x)) + (bf() ? " (−20%)" : "") + "\n"; });
-      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = vuoto ? "Voglio la promo retrofit: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = vuoto ? "Voglio la promo retrofit: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   righe.forEach((r, i) => r.querySelectorAll(".qta button").forEach(b => b.addEventListener("click", () => {

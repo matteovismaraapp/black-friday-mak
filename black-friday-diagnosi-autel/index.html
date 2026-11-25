@@ -248,7 +248,7 @@ footer b{color:var(--ink)}
     <p class="nota" id="notaAss">Con ogni tablet: assistenza Autel 12 mesi gratis (valore 370 €) e 24 mesi di aggiornamenti.</p>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li>Ogni tablet arriva <b>con valigia e cavi</b>; 24 mesi di aggiornamenti già inclusi.</li>
@@ -337,15 +337,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (!n) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday Diagnosi Autel* (25/11–6/12): tablet MaxiSys a −30% con assistenza Autel 12 mesi gratis." : "ho visto la pagina dei tablet di diagnosi Autel.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday Diagnosi Autel* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "questi tablet di diagnosi Autel") + ":\n";
       TABLET.forEach((x, i) => { if (qta[i]) testo += "• " + x.cod + " " + x.nome + ": " + qta[i] + " pz a " + euro(prezzo(x)) + (bf() ? " (−30%)" : "") + "\n"; });
       if (bf()) testo += "• con assistenza Autel 12 mesi in omaggio\n";
-      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = !n ? "Voglio la promo diagnosi: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = !n ? "Voglio la promo diagnosi: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   righe.forEach((r, i) => r.querySelectorAll(".qta button").forEach(b => b.addEventListener("click", () => {

@@ -273,7 +273,7 @@ footer b{color:var(--ink)}
     <div class="stato" id="stato"></div>
     <div class="totale"><span id="totTesto">Tool 12: MA41, cavo OBD<br>e 12 sensori, IVA esclusa</span><b id="tot">238,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <p class="nota">Se preferisci, lo trovi anche sul portale B2B in Promozioni › Promozioni Tool › HUF ECS › Tool 8, Tool 16 o Tool 30.</p>
 </section>
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "• 9300000330 MATE MA41 con cavo OBD: 1 pz\n" +
       (righeS.length ? righeS.join("\n") + "\n" : "") +
       (n < N ? (n ? "Gli altri " + (N - n) + " sensori: decidiamo insieme le valvole\n" : "Valvole dei " + N + " sensori: decidiamo insieme\n") : "") +
-      "Totale " + euro(prezzo()) + " IVA esclusa\n\nOfficina: " + off;
+      "Totale " + euro(prezzo()) + " IVA esclusa\n\nRivenditore: " + off;
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
     $("waTesto").textContent = n ? "Ordina il Tool " + N + " su WhatsApp" : "Voglio il Tool " + N + ": scrivimi";
   }

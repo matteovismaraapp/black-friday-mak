@@ -262,7 +262,7 @@ footer b{color:var(--ink)}
     </div>
     <div class="totale"><span id="totTesto">Totale promo, netto<br>IVA esclusa</span><b id="tot">804,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <div class="rim" style="margin-top:14px">
     <a href="https://makwheels.github.io/workspace-interattivo-mak/matteo-vismara/diagnosi-autel/"><span><b>Ti serve di più?</b> Confronta tutte le diagnosi AUTEL</span><span>›</span></a>
@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const testo = "Ciao Matteo, vorrei " + (bf ? "il *Black Friday AUTEL TS900* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "la *AUTEL TS900*") + ":\n" +
       "• 7200000027 AUTEL TS900" + (bf ? " −40%" : "") + ": 1 pz a " + euro(prezzoTs()) + "\n" +
       (conSgw ? "• 7200000046 Sblocco Security Gateway FULL 12 mesi: 1 pz a 390,00 €\n" : "") +
-      "Totale " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      "Totale " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
     $("waTesto").textContent = off ? "Ordina la TS900 su WhatsApp" : "Voglio la TS900: scrivimi";
   }

@@ -254,7 +254,7 @@ footer b{color:var(--ink)}
     </div>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li>I sensori HUF TRUCK si programmano con <b>ATEQ VT TRUCK</b> (e VT57); gli AUTEL TRUCK con <b>AUTEL ITS600 CV</b>.</li>
@@ -349,15 +349,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (vuoto) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday TPMS TRUCK* (25/11–6/12): sensori HUF e AUTEL truck a 38,50 €, ATEQ VT TRUCK e AUTEL ITS600 CV a −15%." : "ho visto la pagina dei sensori e strumenti TPMS truck.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday TPMS TRUCK* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "questi prodotti TPMS truck") + ":\n";
       SENSORI.forEach((x, i) => { if (qta[i]) testo += "• " + x.cod + " " + x.nome + ": " + qta[i] + " pz a " + euro(prezzo(x)) + (bf() ? " (−30%)" : "") + "\n"; });
       scelti.forEach(k => { const x = STRUMENTI[k]; testo += "• " + x.cod + " " + x.nome + ": 1 pz a " + euro(prezzo(x)) + (bf() ? " (−15%)" : "") + "\n"; });
-      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      testo += "Totale " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = vuoto ? "Voglio la promo truck: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = vuoto ? "Voglio la promo truck: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   righe.forEach((r, i) => r.querySelectorAll(".qta button").forEach(b => b.addEventListener("click", () => {

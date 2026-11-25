@@ -274,7 +274,7 @@ footer img{height:auto}
       <p class="nota">I 45 € valgono solo per il kit senza calza. Kit con la calza: il prezzo te lo confermo io.</p>
     </div>
     <label class="spunta"><input type="checkbox" id="patch"><span><b>Voglio la patch col mio logo</b> (minimo 100 pezzi): mandami il prezzo.</span></label>
-    <label class="f" for="officina">Concessionaria o officina</label>
+    <label class="f" for="officina">Rivenditore</label>
     <input type="text" id="officina" placeholder="Es. Auto Rossi" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (c) testo += "\n• Con calza da neve *" + c + "*" + (m ? ", misura " + m : "") + " (i 45 € sono senza calza: mi confermi il prezzo del kit con la calza?)";
     if ($("patch").checked) testo += "\n• Vorrei la *patch personalizzata* col nostro logo (min. 100 pz): mi fai un prezzo?";
-    if (q || off) testo += "\n\nConcessionaria/officina: " + off;
+    if (q || off) testo += "\n\nRivenditore: " + off;
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
     $("waTesto").textContent = !q ? "Voglio la promo EZ Drive: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il nome e ordina");
   }

@@ -293,7 +293,7 @@ footer b{color:var(--ink)}
     <div class="stato" id="stato"></div>
     <div class="totale"><span id="totTesto">Totale, netto<br>IVA esclusa</span><b id="tot">0,00 €<i>IVA esclusa</i></b></div>
     <label class="f" for="officina">Officina</label>
-    <input type="text" id="officina" placeholder="Nome dell'officina" autocomplete="organization">
+    <input type="text" id="officina" placeholder="Nome del rivenditore" autocomplete="organization">
   </div>
   <ul class="sapere" style="margin-top:16px">
     <li>Prezzi a pezzo, netti, IVA esclusa. Il pacchetto si calcola sul totale dei pezzi dell'ordine.</li>
@@ -395,15 +395,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let testo;
     if (pz === null) {
       testo = "Ciao Matteo, " + (bf() ? "ho visto il *Black Friday Multigrip The Original* (25/11–6/12), −15% su tutti i pacchetti." : "ho visto la pagina delle calze Multigrip The Original.") + " Vorrei qualche informazione.";
-      if (off) testo += "\n\nOfficina: " + off;
+      if (off) testo += "\n\nRivenditore: " + off;
     } else {
       testo = "Ciao Matteo, vorrei " + (bf() ? "il *Black Friday Multigrip The Original* (25/11–6/12)" + (fase === "prima" ? ", dal 25 novembre" : "") : "queste calze Multigrip The Original") + ":\n";
       TAGLIE.forEach((t, i) => { if (qta[i]) testo += "• 73000SS0" + t + " taglia " + t + ": " + qta[i] + " pz\n"; });
       if (e) testo += "• " + e.nome + " omaggio\n";
-      testo += "Totale " + n + " pz a " + euro(pz) + " = " + euro(tot) + " netto IVA esclusa\n\nOfficina: " + off;
+      testo += "Totale " + n + " pz a " + euro(pz) + " = " + euro(tot) + " netto IVA esclusa\n\nRivenditore: " + off;
     }
     $("wa").href = "https://wa.me/" + PROMO.telefono + "?text=" + encodeURIComponent(testo);
-    $("waTesto").textContent = pz === null ? "Voglio la promo Multigrip: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi l'officina e ordina");
+    $("waTesto").textContent = pz === null ? "Voglio la promo Multigrip: scrivimi" : (off ? "Manda l'ordine su WhatsApp" : "Scrivi il rivenditore e ordina");
   }
 
   righe.forEach((r, i) => r.querySelectorAll(".qta button").forEach(b => b.addEventListener("click", () => {
