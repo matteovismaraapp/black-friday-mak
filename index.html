@@ -52,17 +52,15 @@ h2{font-family:var(--titolo);font-weight:800;font-size:28px;text-transform:upper
 h2 em{font-style:normal;color:var(--red)}
 .sub2{color:var(--mute);margin:0 0 12px;font-size:14px}
 
-/* hot deals: pulsanti */
-.hot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.deal{position:relative;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:var(--ink);border:3px solid var(--red);border-radius:12px;
-  padding:10px 30px 10px 10px;min-height:150px;background:#fff;box-shadow:0 4px 0 var(--red)}
-.deal::after{content:"›";position:absolute;right:9px;top:50%;transform:translateY(-55%);font:800 30px/1 var(--testo);color:var(--red)}
-.deal:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red);background:var(--red-soft)}
-.deal img{width:64px;height:64px;object-fit:contain;display:block}
-.deal b{font-family:var(--titolo);font-weight:800;font-size:20px;line-height:1.02;text-transform:uppercase}
-.deal .p{font-family:var(--titolo);font-weight:800;font-size:30px;line-height:1;color:var(--red)}
-.deal .p small{font-family:var(--testo);font-size:11px;font-weight:600;color:var(--mute);margin-left:2px}
-.deal .n{font-size:12px;color:var(--mute);line-height:1.2}
+/* hot deals: tre compatti su una riga */
+.hot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.deal{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;text-decoration:none;color:var(--ink);border:2px solid var(--red);border-radius:10px;
+  padding:8px 6px;background:#fff;box-shadow:0 3px 0 var(--red)}
+.deal:active{transform:translateY(2px);box-shadow:0 1px 0 var(--red);background:var(--red-soft)}
+.deal img{width:56px;height:56px;object-fit:contain;display:block}
+.deal b{font-family:var(--titolo);font-weight:800;font-size:15px;line-height:1.05;text-transform:uppercase;min-height:2.1em;display:flex;align-items:center}
+.deal .p{font-family:var(--titolo);font-weight:800;font-size:26px;line-height:1;color:var(--red)}
+.deal .n{font-size:11px;font-weight:600;color:var(--mute);line-height:1.2}
 
 /* elenco locandine */
 .gruppo h3{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mute);margin:14px 0 4px;font-weight:700}
@@ -95,12 +93,6 @@ h2 em{font-style:normal;color:var(--red)}
 /* menu categorie (stile pulsanti) */
 .pick{margin:0 0 12px;background:#ffe27a;border:2px solid var(--ink);border-radius:10px;padding:10px 14px;font-weight:700;font-size:17px;text-align:center}
 .pick::after{content:" ↓"}
-.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.menu a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:3px;text-decoration:none;border:3px solid var(--red);border-radius:12px;padding:12px 30px 12px 12px;min-height:86px;background:#fff;box-shadow:0 4px 0 var(--red)}
-.menu a::after{content:"›";position:absolute;right:10px;top:50%;transform:translateY(-55%);font:800 28px/1 var(--testo);color:var(--red)}
-.menu a:active{transform:translateY(3px);box-shadow:0 1px 0 var(--red);background:var(--red-soft)}
-.menu b{font-family:var(--titolo);font-weight:800;font-size:22px;line-height:1.02;text-transform:uppercase}
-.menu small{color:var(--red);font-weight:700;font-size:13px;line-height:1.2}
 
 /* sezioni a tendina */
 .sezioni{padding:8px 16px 0;display:flex;flex-direction:column;gap:12px}
@@ -145,46 +137,31 @@ h2 em{font-style:normal;color:var(--red)}
 <!-- HOT DEALS -->
 <section id="hot">
   <h2>Hot <em>deals</em></h2>
-  <p class="sub2">Tocca un'offerta per aprire la locandina e ordinare</p>
   <nav class="hot" aria-label="Hot deals">
-    <a class="deal" href="black-friday-multisens/">
-      <img src="img/d-multisens.webp" alt="" width="64" height="64">
-      <b>Sensori MATE MULTIsens</b>
-      <span class="p">9,90 €<small>cad. + IVA</small></span>
-      <span class="n">da 100 pezzi, anche misti</span>
+    <a class="deal" href="black-friday-ts900/">
+      <img src="img/d-ts900.webp" alt="" width="56" height="56">
+      <b>Autel TS900</b>
+      <span class="p">414&nbsp;€</span>
+      <span class="n">−40% + IVA</span>
     </a>
     <a class="deal" href="black-friday-combo-autel/">
-      <img src="img/d-combo.webp" alt="" width="64" height="64">
-      <b>Combo ITS600 + TBE200</b>
-      <span class="p">450 €<small>+ IVA</small></span>
-      <span class="n">−50%, invece di 900&nbsp;€</span>
-    </a>
-    <a class="deal" href="black-friday-ts900/">
-      <img src="img/d-ts900.webp" alt="" width="64" height="64">
-      <b>Autel TS900</b>
-      <span class="p">414 €<small>+ IVA</small></span>
-      <span class="n">−40%, invece di 690&nbsp;€</span>
+      <img src="img/d-combo.webp" alt="" width="56" height="56">
+      <b>ITS600 + TBE200</b>
+      <span class="p">450&nbsp;€</span>
+      <span class="n">−50% + IVA</span>
     </a>
     <a class="deal" href="black-friday-ez-repair/">
-      <img src="img/d-ezrepair.webp" alt="" width="64" height="64">
+      <img src="img/d-ezrepair.webp" alt="" width="56" height="56">
       <b>NPK EZ Repair</b>
-      <span class="p">15 €<small>netto + IVA</small></span>
-      <span class="n">da 10 pezzi</span>
+      <span class="p">15&nbsp;€</span>
+      <span class="n">netto + IVA</span>
     </a>
   </nav>
 </section>
 
-<!-- MENU CATEGORIE -->
-<section id="menu">
+<!-- TENDINE -->
+<section id="menu" style="padding-bottom:0">
   <p class="pick">Seleziona il prodotto che ti interessa</p>
-  <nav class="menu" aria-label="Categorie">
-    <a href="#sensori"><b>Sensori TPMS</b><small>MULTIsens, HUF, Autel</small></a>
-    <a href="#strumenti"><b>Strumenti TPMS</b><small>fino a −50%</small></a>
-    <a href="#diagnosi"><b>Diagnosi</b><small>fino a −30%</small></a>
-    <a href="#npk"><b>NoProblemKit</b><small>EZ Repair 15 €, ruotini −15%</small></a>
-    <a href="#ruote"><b>Ruote MAK</b><small>fino a −50%</small></a>
-    <a href="#truck"><b>Truck</b><small>fino a −30%</small></a>
-  </nav>
 </section>
 
 <div class="sezioni">
@@ -295,11 +272,6 @@ function tic(){
 }
 tic(); setInterval(tic, 1000);
 
-/* tendine: il menu apre la sezione giusta */
-document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',e=>{
-  const d=document.querySelector(a.getAttribute('href'));if(!d)return;
-  e.preventDefault();d.open=true;requestAnimationFrame(()=>d.scrollIntoView({behavior:'smooth',block:'start'}));
-}));
 
 </script>
 </body>
